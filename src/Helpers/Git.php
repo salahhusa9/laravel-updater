@@ -34,7 +34,7 @@ class Git
     public static function auth()
     {
         // git remote set-url origin https://username:token@github.com/your/repository.git
-        $process = new Process([self::gitPath(), 'remote', 'set-url', 'origin', 'https://' . config('updater.github_username') . ':' . config('updater.github_token') . '@github.com/' . config('updater.github_username') . '/' . config('updater.github_repository') . '.git']);
+        $process = new Process([self::gitPath(), 'remote', 'set-url', 'origin', 'https://'.config('updater.github_username').':'.config('updater.github_token').'@github.com/'.config('updater.github_username').'/'.config('updater.github_repository').'.git']);
         $process->run();
 
         return trim($process->getOutput());
@@ -68,9 +68,10 @@ class Git
     {
         $gitPath = config('updater.git_path');
 
-        if (!$gitPath) {
+        if (! $gitPath) {
             $gitPath = Cache::rememberForever('git_path', function () {
                 $executableFinder = new \Symfony\Component\Process\ExecutableFinder();
+
                 return $executableFinder->find('git');
             });
         }
