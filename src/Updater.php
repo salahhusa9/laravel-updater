@@ -24,7 +24,8 @@ class Updater
                 Git::fetch();
                 Git::pull();
                 Git::checkout($version);
-                return 'Updated to version ' . $version;
+
+                return 'Updated to version '.$version;
             } catch (\Throwable $th) {
                 return $th->getMessage();
             }

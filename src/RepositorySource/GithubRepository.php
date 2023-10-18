@@ -2,7 +2,6 @@
 
 namespace Salahhusa9\Updater\RepositorySource;
 
-use Salahhusa9\Updater\Updater;
 use Illuminate\Support\Facades\Http;
 use Salahhusa9\Updater\Contracts\Repository;
 
@@ -21,10 +20,10 @@ class GithubRepository implements Repository
 
         $response = Http::withHeaders([
             'Accept' => 'application/vnd.github.v3+json',
-            'Authorization' => 'Bearer ' . config('updater.github_token'),
+            'Authorization' => 'Bearer '.config('updater.github_token'),
             'X-GitHub-Api-Version' => '2022-11-28',
         ])
-            ->get("https://api.github.com/repos/" . config('updater.github_username') . "/" . config('updater.github_repository') . "/releases/latest");
+            ->get('https://api.github.com/repos/'.config('updater.github_username').'/'.config('updater.github_repository').'/releases/latest');
 
         return $response->collect();
     }
@@ -50,10 +49,10 @@ class GithubRepository implements Repository
 
         $response = Http::withHeaders([
             'Accept' => 'application/vnd.github.v3+json',
-            'Authorization' => 'Bearer ' . config('updater.github_token'),
+            'Authorization' => 'Bearer '.config('updater.github_token'),
             'X-GitHub-Api-Version' => '2022-11-28',
         ])
-            ->get("https://api.github.com/repos/" . config('updater.github_username') . "/" . config('updater.github_repository') . "/releases");
+            ->get('https://api.github.com/repos/'.config('updater.github_username').'/'.config('updater.github_repository').'/releases');
 
         return $response->collect();
     }

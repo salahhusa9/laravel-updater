@@ -12,4 +12,3 @@ interface Repository
 
     public function getVersionsData();
 }
-
