@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Salahhusa9\Updater\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class UpdaterCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-updater';
 
     public $description = 'My command';
 
