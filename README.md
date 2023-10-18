@@ -51,10 +51,10 @@ php artisan vendor:publish --tag="laravel-updater-views"
 
 ## Usage
 
-```php
+<!-- ```php
 $updater = new Salahhusa9\Updater();
 echo $updater->echoPhrase('Hello, Salahhusa9!');
-```
+``` -->
 
 ## Testing
 
