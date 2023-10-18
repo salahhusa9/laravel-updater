@@ -2,9 +2,9 @@
 
 namespace Salahhusa9\Updater;
 
+use Salahhusa9\Updater\Commands\UpdaterCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Salahhusa9\Updater\Commands\UpdaterCommand;
 
 class UpdaterServiceProvider extends PackageServiceProvider
 {
