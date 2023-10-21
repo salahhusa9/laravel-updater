@@ -35,7 +35,6 @@ class Updater
 
                 $pipelines = [
                     Pipelines\GitPipe::class,
-                    // Pipelines\ComposerPipe::class,
                 ];
 
                 if (config('updater.before_update_pipelines', false) && is_array(config('updater.before_update_pipelines')) && count(config('updater.before_update_pipelines')) > 0) {
