@@ -32,6 +32,10 @@ class Updater
                     $pipelines[] = Pipelines\ArtisanCallMigratePipe::class;
                 }
 
+                if (config('updater.seeders', false) && is_array(config('updater.seeders')) && count(config('updater.seeders')) > 0) {
+                    $pipelines[] = Pipelines\SeedersPipe::class;
+                }
+
                 if (config('updater.cache:clear', false)) {
                     $pipelines[] = Pipelines\ArtisanCallCacheClearPipe::class;
                 }

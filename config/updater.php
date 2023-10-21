@@ -13,6 +13,11 @@ return [
     // run php artisan migrate after update?
     'migrate' => false,
 
+    // run seeders after update?
+    'seeders' => [
+        // '\Database\Seeders\DatabaseSeeder::class',
+    ],
+
     // run php artisan cache:clear after update?
     'cache:clear' => false,
 
