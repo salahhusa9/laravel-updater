@@ -12,6 +12,7 @@ class Composer
         $process = new Process([self::composerPath(), 'install']);
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());

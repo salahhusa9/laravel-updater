@@ -14,5 +14,3 @@ class ArtisanCallCacheClearPipe
         return $next($content);
     }
 }
-
-

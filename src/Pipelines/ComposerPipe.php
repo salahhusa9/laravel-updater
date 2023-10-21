@@ -14,5 +14,3 @@ class ComposerPipe
         return $next($content);
     }
 }
-
-
