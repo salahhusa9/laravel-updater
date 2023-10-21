@@ -28,6 +28,10 @@ class Updater
                     Pipelines\ComposerPipe::class,
                 ];
 
+                if (config('updater.before_update_pipelines', false) && is_array(config('updater.before_update_pipelines')) && count(config('updater.before_update_pipelines')) > 0) {
+                    $pipelines[] = config('updater.before_update_pipelines');
+                }
+
                 if (config('updater.migrate', false)) {
                     $pipelines[] = Pipelines\ArtisanCallMigratePipe::class;
                 }
@@ -56,6 +60,10 @@ class Updater
                     $pipelines[] = Pipelines\ArtisanCallOptimizePipe::class;
                 }
 
+                if (config('updater.after_update_pipelines', false) && is_array(config('updater.after_update_pipelines')) && count(config('updater.after_update_pipelines')) > 0) {
+                    $pipelines[] = config('updater.after_update_pipelines');
+                }
+
                 Pipeline::send([
                     'version' => $version,
                 ])
@@ -66,7 +74,7 @@ class Updater
                         }
                     );
 
-                return 'Updated to version '.$version;
+                return 'Updated to version ' . $version;
             } catch (\Throwable $th) {
                 return $th->getMessage();
             }

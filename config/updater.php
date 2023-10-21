@@ -10,6 +10,10 @@ return [
     'github_username' => env('GITHUB_USERNAME'),
     'github_repository' => env('GITHUB_REPOSITORY'),
 
+    'before_update_pipelines' => [
+        // you can add your own pipelines here
+    ],
+
     // run php artisan migrate after update?
     'migrate' => false,
 
@@ -32,4 +36,9 @@ return [
 
     // run php artisan optimize after update?
     'optimize' => false,
+
+    'after_update_pipelines' => [
+        // you can add your own pipelines here
+    ],
+
 ];
