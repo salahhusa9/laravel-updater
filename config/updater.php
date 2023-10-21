@@ -10,6 +10,8 @@ return [
     'github_username' => env('GITHUB_USERNAME'),
     'github_repository' => env('GITHUB_REPOSITORY'),
 
+    'github_timeout' => 100,
+
     'maintenance_mode' => true,
     'maintenance_mode_secret' => env('MAINTENANCE_MODE_SECRET', false),
 

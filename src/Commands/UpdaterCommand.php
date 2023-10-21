@@ -9,7 +9,7 @@ class UpdaterCommand extends Command
 {
     public $signature = 'updater:update';
 
-    public $description = 'My command';
+    public $description = 'Update the application';
 
     public function handle(): int
     {

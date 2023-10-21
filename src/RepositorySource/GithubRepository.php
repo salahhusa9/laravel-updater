@@ -23,6 +23,7 @@ class GithubRepository implements Repository
             'Authorization' => 'Bearer '.config('updater.github_token'),
             'X-GitHub-Api-Version' => '2022-11-28',
         ])
+            ->timeout(config('updater.github_timeout', 100))
             ->get('https://api.github.com/repos/'.config('updater.github_username').'/'.config('updater.github_repository').'/releases/latest');
 
         return $response->collect();
@@ -52,6 +53,7 @@ class GithubRepository implements Repository
             'Authorization' => 'Bearer '.config('updater.github_token'),
             'X-GitHub-Api-Version' => '2022-11-28',
         ])
+            ->timeout(config('updater.github_timeout', 100))
             ->get('https://api.github.com/repos/'.config('updater.github_username').'/'.config('updater.github_repository').'/releases');
 
         return $response->collect();
