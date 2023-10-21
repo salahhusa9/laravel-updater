@@ -3,16 +3,21 @@
 namespace Salahhusa9\Updater\Commands;
 
 use Illuminate\Console\Command;
+use Salahhusa9\Updater\Facades\Updater;
 
 class UpdaterCommand extends Command
 {
-    public $signature = 'laravel-updater';
+    public $signature = 'updater:update';
 
     public $description = 'My command';
 
     public function handle(): int
     {
-        $this->comment('All done');
+        $this->comment('start');
+
+        Updater::update();
+
+        $this->info('Done');
 
         return self::SUCCESS;
     }
