@@ -11,6 +11,7 @@ class GitPipe
     {
         $version = $content['new_version'];
 
+        Git::auth();
         Git::fetch();
         Git::pull();
         Git::checkout($version);
