@@ -10,6 +10,9 @@ return [
     'github_username' => env('GITHUB_USERNAME'),
     'github_repository' => env('GITHUB_REPOSITORY'),
 
+    'maintenance_mode' => true,
+    'maintenance_mode_secret' => env('MAINTENANCE_MODE_SECRET', false),
+
     'before_update_pipelines' => [
         // you can add your own pipelines here
     ],

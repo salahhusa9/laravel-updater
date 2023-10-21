@@ -9,7 +9,7 @@ class GitPipe
 {
     public function handle($content, Closure $next)
     {
-        $version = $content['version'];
+        $version = $content['new_version'];
 
         Git::fetch();
         Git::pull();

@@ -2,6 +2,7 @@
 
 namespace Salahhusa9\Updater;
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Pipeline;
 use Salahhusa9\Updater\Contracts\Repository;
@@ -22,6 +23,15 @@ class Updater
     {
         if (is_array($this->newVersionAvailable()) && $this->newVersionAvailable()['current_version'] != $version) {
             try {
+
+                if (config('updater.maintenance_mode', false)) {
+                    Artisan::call(
+                        'down',
+                        config('updater.maintenance_mode_secret', false) ? [
+                            '--secret' => config('updater.maintenance_mode_secret', false),
+                        ] : []
+                    );
+                }
 
                 $pipelines = [
                     Pipelines\GitPipe::class,
@@ -65,7 +75,8 @@ class Updater
                 }
 
                 Pipeline::send([
-                    'version' => $version,
+                    'current_version' => $this->getCurrentVersion(),
+                    'new_version' => $version,
                 ])
                     ->through($pipelines)
                     ->then(
@@ -74,8 +85,16 @@ class Updater
                         }
                     );
 
-                return 'Updated to version '.$version;
+                if (config('updater.maintenance_mode', false)) {
+                    Artisan::call('up');
+                }
+
+                return 'Updated to version ' . $version;
             } catch (\Throwable $th) {
+                if (config('updater.maintenance_mode', false)) {
+                    Artisan::call('up');
+                }
+
                 return $th->getMessage();
             }
         } else {
