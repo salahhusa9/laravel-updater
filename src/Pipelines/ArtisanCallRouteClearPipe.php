@@ -14,5 +14,3 @@ class ArtisanCallRouteClearPipe
         return $next($content);
     }
 }
-
-

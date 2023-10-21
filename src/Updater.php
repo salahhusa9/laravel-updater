@@ -66,7 +66,7 @@ class Updater
                         }
                     );
 
-                return 'Updated to version ' . $version;
+                return 'Updated to version '.$version;
             } catch (\Throwable $th) {
                 return $th->getMessage();
             }

@@ -14,4 +14,3 @@ class ArtisanCallOptimizePipe
         return $next($content);
     }
 }
-

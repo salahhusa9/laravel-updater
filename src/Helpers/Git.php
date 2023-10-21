@@ -13,6 +13,7 @@ class Git
 
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());
@@ -24,6 +25,7 @@ class Git
         $process = new Process([self::gitPath(), 'rev-parse', '--abbrev-ref', 'HEAD']);
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());
@@ -35,6 +37,7 @@ class Git
         $process = new Process([self::gitPath(), 'describe', '--tags', '--abbrev=0']);
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());
@@ -43,9 +46,10 @@ class Git
 
     public static function auth()
     {
-        $process = new Process([self::gitPath(), 'remote', 'set-url', 'origin', 'https://' . config('updater.github_username') . ':' . config('updater.github_token') . '@github.com/' . config('updater.github_username') . '/' . config('updater.github_repository') . '.git']);
+        $process = new Process([self::gitPath(), 'remote', 'set-url', 'origin', 'https://'.config('updater.github_username').':'.config('updater.github_token').'@github.com/'.config('updater.github_username').'/'.config('updater.github_repository').'.git']);
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());
@@ -57,6 +61,7 @@ class Git
         $process = new Process([self::gitPath(), 'pull']);
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());
@@ -68,6 +73,7 @@ class Git
         $process = new Process([self::gitPath(), 'checkout', $branch]);
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());
@@ -79,6 +85,7 @@ class Git
         $process = new Process([self::gitPath(), 'fetch']);
         try {
             $process->mustRun();
+
             return trim($process->getOutput());
         } catch (\Throwable $th) {
             return new \Exception($th->getMessage());

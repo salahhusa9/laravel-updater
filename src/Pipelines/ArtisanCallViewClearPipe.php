@@ -14,5 +14,3 @@ class ArtisanCallViewClearPipe
         return $next($content);
     }
 }
-
-
