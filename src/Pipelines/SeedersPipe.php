@@ -17,5 +17,3 @@ class SeedersPipe
         return $next($content);
     }
 }
-
-
