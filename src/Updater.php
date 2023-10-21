@@ -3,6 +3,7 @@
 namespace Salahhusa9\Updater;
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Pipeline;
 use Salahhusa9\Updater\Contracts\Repository;
 use Salahhusa9\Updater\Helpers\Git;
 
@@ -21,11 +22,47 @@ class Updater
     {
         if (is_array($this->newVersionAvailable()) && $this->newVersionAvailable()['current_version'] != $version) {
             try {
-                Git::fetch();
-                Git::pull();
-                Git::checkout($version);
 
-                return 'Updated to version '.$version;
+                $pipelines = [
+                    Pipelines\GitPipe::class,
+                    Pipelines\ComposerPipe::class,
+                ];
+
+                if (config('updater.migrate', false)) {
+                    $pipelines[] = Pipelines\ArtisanCallMigratePipe::class;
+                }
+
+                if (config('updater.cache:clear', false)) {
+                    $pipelines[] = Pipelines\ArtisanCallCacheClearPipe::class;
+                }
+
+                if (config('updater.view:clear', false)) {
+                    $pipelines[] = Pipelines\ArtisanCallViewClearPipe::class;
+                }
+
+                if (config('updater.config:clear', false)) {
+                    $pipelines[] = Pipelines\ArtisanCallConfigClearPipe::class;
+                }
+
+                if (config('updater.route:clear', false)) {
+                    $pipelines[] = Pipelines\ArtisanCallRouteClearPipe::class;
+                }
+
+                if (config('updater.optimize', false)) {
+                    $pipelines[] = Pipelines\ArtisanCallOptimizePipe::class;
+                }
+
+                Pipeline::send([
+                    'version' => $version,
+                ])
+                    ->through($pipelines)
+                    ->then(
+                        function ($content) {
+                            return $content;
+                        }
+                    );
+
+                return 'Updated to version ' . $version;
             } catch (\Throwable $th) {
                 return $th->getMessage();
             }
