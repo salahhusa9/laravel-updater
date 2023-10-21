@@ -92,7 +92,13 @@ class Git
             $gitPath = Cache::rememberForever('git_path', function () {
                 $executableFinder = new \Symfony\Component\Process\ExecutableFinder();
 
-                return $executableFinder->find('git');
+                $gitPath = $executableFinder->find('git');
+
+                if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+                    $gitPath = '"'.$gitPath.'"';
+                }
+
+                return $gitPath;
             });
         }
 
