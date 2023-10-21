@@ -89,7 +89,7 @@ class Updater
                     Artisan::call('up');
                 }
 
-                return 'Updated to version ' . $version;
+                return 'Updated to version '.$version;
             } catch (\Throwable $th) {
                 if (config('updater.maintenance_mode', false)) {
                     Artisan::call('up');
