@@ -13,11 +13,18 @@ class UpdaterCommand extends Command
 
     public function handle(): int
     {
-        $this->comment('start');
+        $newVersionAvailable = Updater::newVersionAvailable();
+        if (! is_array($newVersionAvailable)) {
+            $this->error('No new version available');
+
+            return self::FAILURE;
+        }
+
+        $this->comment('Updating to version '.$newVersionAvailable['new_version']);
 
         Updater::update();
 
-        $this->info('Done');
+        $this->info('Application updated! You are now on version '. Updater::getCurrentVersion().'!');
 
         return self::SUCCESS;
     }
