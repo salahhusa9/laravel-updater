@@ -3,6 +3,7 @@
 namespace Salahhusa9\Updater\Commands;
 
 use Illuminate\Console\Command;
+use Salahhusa9\Updater\Events\NewVersionAvailable;
 use Salahhusa9\Updater\Facades\Updater;
 
 class UpdaterCommand extends Command
@@ -21,6 +22,8 @@ class UpdaterCommand extends Command
         }
 
         $this->info('New version available: '.$newVersionAvailable['new_version']);
+
+        event(new NewVersionAvailable($newVersionAvailable['current_version'],$newVersionAvailable['new_version']));
 
         return self::SUCCESS;
     }

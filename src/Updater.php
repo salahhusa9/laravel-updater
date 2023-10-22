@@ -23,6 +23,7 @@ class Updater
     {
         if (is_array($this->newVersionAvailable()) && $this->newVersionAvailable()['current_version'] != $version) {
             try {
+                $current_version_in_past = $this->newVersionAvailable()['current_version'];
 
                 if (config('updater.maintenance_mode', false)) {
                     Artisan::call(
@@ -99,11 +100,15 @@ class Updater
                     Artisan::call('up');
                 }
 
+                event(new Events\UpdatedSuccessfully($current_version_in_past, $version));
+
                 return 'Updated to version '.$version;
             } catch (\Throwable $th) {
                 if (config('updater.maintenance_mode', false)) {
                     Artisan::call('up');
                 }
+
+                event(new Events\UpdateFailed($current_version_in_past, $version, $th->getMessage()));
 
                 return throw $th;
             }
