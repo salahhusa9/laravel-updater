@@ -23,7 +23,7 @@ class UpdaterCommand extends Command
 
         $this->info('New version available: '.$newVersionAvailable['new_version']);
 
-        event(new NewVersionAvailable($newVersionAvailable['current_version'],$newVersionAvailable['new_version']));
+        event(new NewVersionAvailable($newVersionAvailable['current_version'], $newVersionAvailable['new_version']));
 
         return self::SUCCESS;
     }

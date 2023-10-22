@@ -2,14 +2,15 @@
 
 namespace Salahhusa9\Updater\Events;
 
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
 
 class UpdatedSuccessfully
 {
     use Dispatchable, SerializesModels;
 
     public $pastVersion;
+
     public $newVersion;
 
     public function __construct($pastVersion, $newVersion)
@@ -18,6 +19,3 @@ class UpdatedSuccessfully
         $this->newVersion = $newVersion;
     }
 }
-
-
-
