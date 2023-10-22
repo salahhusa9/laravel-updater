@@ -24,7 +24,7 @@ class UpdaterCommand extends Command
 
         Updater::update();
 
-        $this->info('Application updated! You are now on version '. Updater::getCurrentVersion().'!');
+        $this->info('Application updated! You are now on version '.Updater::getCurrentVersion().'!');
 
         return self::SUCCESS;
     }
