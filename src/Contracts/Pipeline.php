@@ -6,4 +6,3 @@ interface Pipeline
 {
     public function handle($content, \Closure $next);
 }
-
