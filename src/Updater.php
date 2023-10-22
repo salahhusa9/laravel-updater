@@ -73,12 +73,15 @@ class Updater
                     $pipelines[] = config('updater.after_update_pipelines');
                 }
 
-                foreach ($pipelines as $key => $pipeline) {
-                    if (! is_object($pipeline) && ($pipeline instanceof \Salahhusa9\Updater\Contracts\Pipeline)) {
-                        unset($pipelines[$key]);
-                    } else {
-                        throw new \Exception('Pipeline must be implement \Salahhusa9\Updater\Contracts\Pipeline');
-                    }
+                // check if pipelines is array and not empty and items is implemented Pipeline contract
+                if (is_array($pipelines) && count($pipelines) > 0 && array_reduce($pipelines, function ($carry, $item) {
+                    return $carry && in_array(Pipeline::class, class_implements($item));
+                }, true)) {
+                    $pipelines = array_map(function ($item) {
+                        return new $item();
+                    }, $pipelines);
+                } else {
+                    throw new \Exception('Pipelines is not array or empty or not implemented Pipeline contract');
                 }
 
                 Pipeline::send([
