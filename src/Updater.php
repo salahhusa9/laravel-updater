@@ -73,6 +73,14 @@ class Updater
                     $pipelines[] = config('updater.after_update_pipelines');
                 }
 
+                foreach ($pipelines as $key => $pipeline) {
+                    if (!is_object($pipeline) && ($pipeline instanceof \Salahhusa9\Updater\Contracts\Pipeline) ) {
+                        unset($pipelines[$key]);
+                    }else{
+                        throw new \Exception('Pipeline must be implement \Salahhusa9\Updater\Contracts\Pipeline');
+                    }
+                }
+
                 Pipeline::send([
                     'current_version' => $this->getCurrentVersion(),
                     'new_version' => $version,
