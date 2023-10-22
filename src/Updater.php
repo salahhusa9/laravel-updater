@@ -22,9 +22,10 @@ class Updater
     private function updateTo($version): string
     {
         if (is_array($this->newVersionAvailable()) && $this->newVersionAvailable()['current_version'] != $version) {
-            try {
-                $current_version_in_past = $this->newVersionAvailable()['current_version'];
 
+            $current_version_in_past = $this->newVersionAvailable()['current_version'];
+
+            try {
                 if (config('updater.maintenance_mode', false)) {
                     Artisan::call(
                         'down',
