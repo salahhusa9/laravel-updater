@@ -94,7 +94,7 @@ class Updater
                     Artisan::call('up');
                 }
 
-                return $th->getMessage();
+                return throw $th;
             }
         } else {
             return 'No new version available';

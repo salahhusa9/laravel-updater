@@ -3,6 +3,7 @@
 namespace Salahhusa9\Updater\Pipelines;
 
 use Closure;
+use Salahhusa9\Updater\Facades\Updater;
 use Salahhusa9\Updater\Helpers\Git;
 
 class GitPipe
@@ -14,7 +15,11 @@ class GitPipe
         Git::auth();
         Git::fetch();
         Git::pull();
-        Git::checkout($version);
+        $checkout = Git::checkout($version);
+
+        if (Updater::getCurrentVersion() != $version) {
+            return throw new \Exception('git checkout failed: '.$checkout);
+        }
 
         return $next($content);
     }
