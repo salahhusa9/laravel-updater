@@ -74,14 +74,14 @@ class Updater
                 }
 
                 // check if pipelines is array and not empty and items is implemented Pipeline contract
-                if (is_array($pipelines) && count($pipelines) > 0 && array_reduce($pipelines, function ($carry, $item) {
-                    return $carry && in_array(Pipeline::class, class_implements($item));
-                }, true)) {
-                    $pipelines = array_map(function ($item) {
-                        return new $item();
-                    }, $pipelines);
+                if (is_array($pipelines) && count($pipelines) > 0) {
+                    foreach ($pipelines as $pipeline) {
+                        if (!is_subclass_of($pipeline, \Salahhusa9\Updater\Contracts\Pipeline::class)) {
+                            throw new \Exception('Pipeline '. $pipeline .' is not implemented Pipeline contract:' . \Salahhusa9\Updater\Contracts\Pipeline::class);
+                        }
+                    }
                 } else {
-                    throw new \Exception('Pipelines is not array or empty or not implemented Pipeline contract');
+                    throw new \Exception('Pipelines is not array or empty');
                 }
 
                 Pipeline::send([
