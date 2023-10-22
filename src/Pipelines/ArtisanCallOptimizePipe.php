@@ -4,8 +4,9 @@ namespace Salahhusa9\Updater\Pipelines;
 
 use Closure;
 use Illuminate\Support\Facades\Artisan;
+use Salahhusa9\Updater\Contracts\Pipeline;
 
-class ArtisanCallOptimizePipe
+class ArtisanCallOptimizePipe implements Pipeline
 {
     public function handle($content, Closure $next)
     {

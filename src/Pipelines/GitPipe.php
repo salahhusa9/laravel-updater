@@ -3,10 +3,11 @@
 namespace Salahhusa9\Updater\Pipelines;
 
 use Closure;
+use Salahhusa9\Updater\Contracts\Pipeline;
 use Salahhusa9\Updater\Facades\Updater;
 use Salahhusa9\Updater\Helpers\Git;
 
-class GitPipe
+class GitPipe implements Pipeline
 {
     public function handle($content, Closure $next)
     {
