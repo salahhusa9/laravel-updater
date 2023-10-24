@@ -8,7 +8,6 @@ class Helper
      * isVersion
      *
      * @param  mixed  $version
-     * @return int|false
      */
     public function isVersion($version): int|false
     {
