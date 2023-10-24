@@ -4,11 +4,11 @@ namespace Salahhusa9\Updater\Contracts;
 
 interface Repository
 {
-    public function getLatestVersion();
+    public function getLatestVersion(): string;
 
-    public function getLatestVersionData();
+    public function getLatestVersionData(): \Illuminate\Support\Collection;
 
-    public function getVersions();
+    public function getVersions(): array;
 
-    public function getVersionsData();
+    public function getVersionsData(): \Illuminate\Support\Collection;
 }
