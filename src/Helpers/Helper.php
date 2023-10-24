@@ -8,9 +8,9 @@ class Helper
      * isVersion
      *
      * @param  mixed  $version
-     * @return void
+     * @return int|false
      */
-    public function isVersion($version)
+    public function isVersion($version): int|false
     {
         $pattern = '/^v(\d+\.\d+\.\d+)(-[a-zA-Z0-9]+(\.\d+)?)?$/';
 
