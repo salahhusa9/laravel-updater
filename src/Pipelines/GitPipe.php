@@ -9,6 +9,13 @@ use Salahhusa9\Updater\Helpers\Git;
 
 class GitPipe implements Pipeline
 {
+    /**
+     * handle
+     *
+     * @param  array  $content
+     * @param  mixed  $next
+     * @return void
+     */
     public function handle($content, Closure $next)
     {
         $version = $content['new_version'];

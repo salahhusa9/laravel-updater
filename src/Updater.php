@@ -10,6 +10,9 @@ use Salahhusa9\Updater\Helpers\Git;
 
 class Updater
 {
+    /**
+     * update
+     */
     public function update(): string
     {
         if (is_array($this->newVersionAvailable())) {
@@ -19,6 +22,11 @@ class Updater
         }
     }
 
+    /**
+     * updateTo
+     *
+     * @param  mixed  $version
+     */
     private function updateTo($version): string
     {
         if (is_array($this->newVersionAvailable()) && $this->newVersionAvailable()['current_version'] != $version) {
@@ -118,6 +126,11 @@ class Updater
         }
     }
 
+    /**
+     * newVersionAvailable
+     *
+     * @return bool
+     */
     public function newVersionAvailable(): bool|array
     {
         $currentVersion = $this->getCurrentVersion();
@@ -133,6 +146,9 @@ class Updater
         return false;
     }
 
+    /**
+     * getCurrentVersion
+     */
     public function getCurrentVersion(): string
     {
         $branch = Git::getCurrentBranch();
@@ -143,6 +159,9 @@ class Updater
         return $head;
     }
 
+    /**
+     * getLatestVersion
+     */
     public function getLatestVersion(): string
     {
         return Cache::remember('latest_version', 5, function () {
@@ -150,6 +169,9 @@ class Updater
         });
     }
 
+    /**
+     * getLatestVersionData
+     */
     public function getLatestVersionData(): array
     {
         return Cache::remember('latest_version_data', 5, function () {
@@ -157,6 +179,9 @@ class Updater
         });
     }
 
+    /**
+     * versions
+     */
     public function versions(): array
     {
         return Cache::remember('versions', 5, function () {

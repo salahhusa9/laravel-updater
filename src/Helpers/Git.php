@@ -7,6 +7,13 @@ use Illuminate\Support\Facades\Process;
 
 class Git
 {
+    /**
+     * getCurrentCommit
+     *
+     * @return string
+     *
+     * @throws \Exception
+     */
     public static function getCurrentCommit()
     {
         $process = Process::run(self::gitPath().' log --pretty="%h" -n1 HEAD');
@@ -18,6 +25,13 @@ class Git
         return trim($process->output());
     }
 
+    /**
+     * getCurrentBranch
+     *
+     * @return string
+     *
+     * @throws \Exception
+     */
     public static function getCurrentBranch()
     {
         $process = Process::run(self::gitPath().' rev-parse --abbrev-ref HEAD');
@@ -29,6 +43,13 @@ class Git
         return trim($process->output());
     }
 
+    /**
+     * getCurrentTag
+     *
+     * @return string
+     *
+     * @throws \Exception
+     */
     public static function getCurrentTag()
     {
         $process = Process::run(self::gitPath().' describe --tags --abbrev=0');
@@ -40,6 +61,13 @@ class Git
         return trim($process->output());
     }
 
+    /**
+     * auth
+     *
+     * @return string
+     *
+     * @throws \Exception
+     */
     public static function auth()
     {
         $process = Process::run(self::gitPath().' remote set-url origin https://'.config('updater.github_username').':'.config('updater.github_token').'@github.com/'.config('updater.github_username').'/'.config('updater.github_repository').'.git');
@@ -51,6 +79,13 @@ class Git
         return trim($process->output());
     }
 
+    /**
+     * pull
+     *
+     * @return string
+     *
+     * @throws \Exception
+     */
     public static function pull()
     {
         $process = Process::run(self::gitPath().' pull');
@@ -62,6 +97,14 @@ class Git
         return trim($process->output());
     }
 
+    /**
+     * checkout
+     *
+     * @param  mixed  $branch
+     * @return string
+     *
+     * @throws \Exception
+     */
     public static function checkout($branch)
     {
         $process = Process::run(self::gitPath().' checkout '.$branch);
@@ -73,6 +116,13 @@ class Git
         return trim($process->output());
     }
 
+    /**
+     * fetch
+     *
+     * @return string
+     *
+     * @throws \Exception
+     */
     public static function fetch()
     {
         $process = Process::run(self::gitPath().' fetch');
@@ -84,6 +134,11 @@ class Git
         return trim($process->output());
     }
 
+    /**
+     * gitPath
+     *
+     * @return string
+     */
     public static function gitPath()
     {
         $gitPath = config('updater.git_path');
