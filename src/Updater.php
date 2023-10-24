@@ -145,14 +145,21 @@ class Updater
 
     public function getLatestVersion(): string
     {
-        return Cache::remember('latest_version', 60, function () {
+        return Cache::remember('latest_version', 5, function () {
             return app(Repository::class)->getLatestVersion();
+        });
+    }
+
+    public function getLatestVersionData(): array
+    {
+        return Cache::remember('latest_version_data', 5, function () {
+            return app(Repository::class)->getLatestVersionData();
         });
     }
 
     public function versions(): array
     {
-        return Cache::remember('versions', 60, function () {
+        return Cache::remember('versions', 5, function () {
             return app(Repository::class)->getVersions();
         });
     }
