@@ -7,7 +7,7 @@ class Helper
     /**
      * isVersion
      *
-     * @param  mixed $version
+     * @param  mixed  $version
      * @return void
      */
     public function isVersion($version)

@@ -11,6 +11,7 @@ class Git
      * getCurrentCommit
      *
      * @return string
+     *
      * @throws \Exception
      */
     public static function getCurrentCommit()
@@ -28,6 +29,7 @@ class Git
      * getCurrentBranch
      *
      * @return string
+     *
      * @throws \Exception
      */
     public static function getCurrentBranch()
@@ -45,6 +47,7 @@ class Git
      * getCurrentTag
      *
      * @return string
+     *
      * @throws \Exception
      */
     public static function getCurrentTag()
@@ -62,6 +65,7 @@ class Git
      * auth
      *
      * @return string
+     *
      * @throws \Exception
      */
     public static function auth()
@@ -79,6 +83,7 @@ class Git
      * pull
      *
      * @return string
+     *
      * @throws \Exception
      */
     public static function pull()
@@ -95,8 +100,9 @@ class Git
     /**
      * checkout
      *
-     * @param  mixed $branch
+     * @param  mixed  $branch
      * @return string
+     *
      * @throws \Exception
      */
     public static function checkout($branch)
@@ -114,6 +120,7 @@ class Git
      * fetch
      *
      * @return string
+     *
      * @throws \Exception
      */
     public static function fetch()

@@ -12,8 +12,8 @@ class GitPipe implements Pipeline
     /**
      * handle
      *
-     * @param  array $content
-     * @param  mixed $next
+     * @param  array  $content
+     * @param  mixed  $next
      * @return void
      */
     public function handle($content, Closure $next)
