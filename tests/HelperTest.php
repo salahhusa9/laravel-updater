@@ -1,7 +1,7 @@
 <?php
 
-use Salahhusa9\Updater\Helpers\Helper;
 use PHPUnit\Framework\TestCase;
+use Salahhusa9\Updater\Helpers\Helper;
 
 class HelperTest extends TestCase
 {
