@@ -8,6 +8,13 @@ use Salahhusa9\Updater\Contracts\Pipeline;
 
 class ArtisanCallConfigClearPipe implements Pipeline
 {
+    /**
+     * handle
+     *
+     * @param  array $content
+     * @param  mixed $next
+     * @return void
+     */
     public function handle($content, Closure $next)
     {
         Artisan::call('config:clear');

@@ -7,6 +7,11 @@ use Salahhusa9\Updater\Contracts\Repository;
 
 class GithubRepository implements Repository
 {
+    /**
+     * getLatestVersion
+     *
+     * @return string
+     */
     public function getLatestVersion(): string
     {
         $this->checkConfig();
@@ -14,6 +19,11 @@ class GithubRepository implements Repository
         return isset($this->getLatestVersionData()['message']) ? throw new \Exception($this->getLatestVersionData()['message']) : $this->getLatestVersionData()['tag_name'];
     }
 
+    /**
+     * getLatestVersionData
+     *
+     * @return Illuminate\Support\Collection
+     */
     public function getLatestVersionData(): \Illuminate\Support\Collection
     {
         $this->checkConfig();
@@ -29,6 +39,11 @@ class GithubRepository implements Repository
         return $response->collect();
     }
 
+    /**
+     * getVersions
+     *
+     * @return array
+     */
     public function getVersions(): array
     {
         $this->checkConfig();
@@ -44,6 +59,11 @@ class GithubRepository implements Repository
         })->toArray();
     }
 
+    /**
+     * getVersionsData
+     *
+     * @return Illuminate\Support\Collection
+     */
     public function getVersionsData(): \Illuminate\Support\Collection
     {
         $this->checkConfig();
@@ -59,6 +79,11 @@ class GithubRepository implements Repository
         return $response->collect();
     }
 
+    /**
+     * checkConfig
+     *
+     * @return void
+     */
     private function checkConfig()
     {
         if (config('updater.github_token') == null) {
