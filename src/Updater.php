@@ -12,8 +12,6 @@ class Updater
 {
     /**
      * update
-     *
-     * @return string
      */
     public function update(): string
     {
@@ -27,8 +25,7 @@ class Updater
     /**
      * updateTo
      *
-     * @param  mixed $version
-     * @return string
+     * @param  mixed  $version
      */
     private function updateTo($version): string
     {
@@ -151,8 +148,6 @@ class Updater
 
     /**
      * getCurrentVersion
-     *
-     * @return string
      */
     public function getCurrentVersion(): string
     {
@@ -166,8 +161,6 @@ class Updater
 
     /**
      * getLatestVersion
-     *
-     * @return string
      */
     public function getLatestVersion(): string
     {
@@ -178,8 +171,6 @@ class Updater
 
     /**
      * getLatestVersionData
-     *
-     * @return array
      */
     public function getLatestVersionData(): array
     {
@@ -190,8 +181,6 @@ class Updater
 
     /**
      * versions
-     *
-     * @return array
      */
     public function versions(): array
     {

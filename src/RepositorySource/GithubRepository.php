@@ -9,8 +9,6 @@ class GithubRepository implements Repository
 {
     /**
      * getLatestVersion
-     *
-     * @return string
      */
     public function getLatestVersion(): string
     {
@@ -41,8 +39,6 @@ class GithubRepository implements Repository
 
     /**
      * getVersions
-     *
-     * @return array
      */
     public function getVersions(): array
     {
