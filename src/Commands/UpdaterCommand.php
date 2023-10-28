@@ -20,7 +20,7 @@ class UpdaterCommand extends Command
             return self::FAILURE;
         }
 
-        $this->comment('Updating to version '.$newVersionAvailable['new_version']);
+        $this->comment('Updating to version '.$newVersionAvailable['latest_version']);
 
         Updater::update(output: function ($message) {
             $this->comment($message);
