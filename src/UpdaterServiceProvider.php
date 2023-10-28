@@ -2,6 +2,7 @@
 
 namespace Salahhusa9\Updater;
 
+use Salahhusa9\Updater\Commands\CheckCommand;
 use Salahhusa9\Updater\Commands\UpdaterCommand;
 use Salahhusa9\Updater\Contracts\Repository;
 use Salahhusa9\Updater\RepositorySource\GithubRepository;
