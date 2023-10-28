@@ -138,6 +138,7 @@ class Updater
             }
         } else {
             $this->output('No new version available');
+
             return 'No new version available';
         }
     }
