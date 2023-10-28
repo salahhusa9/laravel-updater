@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Salahhusa9\Updater\Events\NewVersionAvailable;
 use Salahhusa9\Updater\Facades\Updater;
 
-class UpdaterCommand extends Command
+class CheckCommand extends Command
 {
     public $signature = 'updater:check';
 
