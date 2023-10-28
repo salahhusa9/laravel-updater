@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Salahhusa9\Updater\Events\NewVersionAvailable;
 use Salahhusa9\Updater\Facades\Updater;
 
-class UpdaterCommand extends Command
+class CheckCommand extends Command
 {
     public $signature = 'updater:check';
 
@@ -21,9 +21,9 @@ class UpdaterCommand extends Command
             return self::SUCCESS;
         }
 
-        $this->info('New version available: '.$newVersionAvailable['new_version']);
+        $this->info('New version available: '.$newVersionAvailable['latest_version']);
 
-        event(new NewVersionAvailable($newVersionAvailable['current_version'], $newVersionAvailable['new_version']));
+        event(new NewVersionAvailable($newVersionAvailable['current_version'], $newVersionAvailable['latest_version']));
 
         return self::SUCCESS;
     }

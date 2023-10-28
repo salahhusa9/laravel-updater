@@ -17,10 +17,18 @@ class SeedersPipe implements Pipeline
      */
     public function handle($content, Closure $next)
     {
+        if (is_callable($content['output'])) {
+            call_user_func($content['output'], 'Seeding...');
+        }
+
         Artisan::call('db:seed', [
             '--class' => implode(' --class=', config('updater.seeders')),
             '--force' => true,
         ]);
+
+        if (is_callable($content['output'])) {
+            call_user_func($content['output'], 'Seeded!');
+        }
 
         return $next($content);
     }

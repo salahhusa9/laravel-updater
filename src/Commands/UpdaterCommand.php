@@ -20,9 +20,11 @@ class UpdaterCommand extends Command
             return self::FAILURE;
         }
 
-        $this->comment('Updating to version '.$newVersionAvailable['new_version']);
+        $this->comment('Updating to version '.$newVersionAvailable['latest_version']);
 
-        Updater::update();
+        Updater::update(output: function ($message) {
+            $this->comment($message);
+        });
 
         $this->info('Application updated! You are now on version '.Updater::getCurrentVersion().'!');
 
