@@ -43,6 +43,8 @@ class Updater
 
             try {
                 if (config('updater.maintenance_mode', false)) {
+                    $this->output('Maintenance mode is on, turning it on...');
+
                     Artisan::call(
                         'down',
                         config('updater.maintenance_mode_secret', false) ? [
@@ -117,6 +119,7 @@ class Updater
                     );
 
                 if (config('updater.maintenance_mode', false)) {
+                    $this->output('Maintenance mode is on, turning it off...');
                     Artisan::call('up');
                 }
 
@@ -125,6 +128,7 @@ class Updater
                 return 'Updated to version '.$version;
             } catch (\Throwable $th) {
                 if (config('updater.maintenance_mode', false)) {
+                    $this->output('Maintenance mode is on, turning it off...');
                     Artisan::call('up');
                 }
 
@@ -133,6 +137,7 @@ class Updater
                 return throw $th;
             }
         } else {
+            $this->output('No new version available');
             return 'No new version available';
         }
     }
