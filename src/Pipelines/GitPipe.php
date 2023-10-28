@@ -20,6 +20,10 @@ class GitPipe implements Pipeline
     {
         $version = $content['new_version'];
 
+        if (is_callable($content['output'])) {
+            call_user_func($content['output'], 'Downloading version '.$version.'...');
+        }
+
         Git::auth();
         Git::fetch();
         Git::pull();
