@@ -22,7 +22,9 @@ class UpdaterCommand extends Command
 
         $this->comment('Updating to version '.$newVersionAvailable['new_version']);
 
-        Updater::update();
+        Updater::update(output: function ($message) {
+            $this->comment($message);
+        });
 
         $this->info('Application updated! You are now on version '.Updater::getCurrentVersion().'!');
 

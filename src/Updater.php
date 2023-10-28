@@ -10,11 +10,19 @@ use Salahhusa9\Updater\Helpers\Git;
 
 class Updater
 {
+    private $output;
+
     /**
      * update
      */
-    public function update(): string
+    public function update(callable $output = null): string
     {
+        if (!is_callable($output)) {
+            throw new \Exception('Output must be callable');
+        }
+
+        $this->output = $output;
+
         if (is_array($this->newVersionAvailable())) {
             return $this->updateTo($this->getLatestVersion());
         } else {
@@ -94,9 +102,12 @@ class Updater
                     throw new \Exception('Pipelines is not array or empty');
                 }
 
+                $this->output('Start Updating to version '.$version);
+
                 Pipeline::send([
                     'current_version' => $this->getCurrentVersion(),
                     'new_version' => $version,
+                    'output' => $this->output,
                 ])
                     ->through($pipelines)
                     ->then(
@@ -123,6 +134,18 @@ class Updater
             }
         } else {
             return 'No new version available';
+        }
+    }
+
+    /**
+     * output
+     *
+     * @param  mixed  $message
+     */
+    public function output($message): void
+    {
+        if (is_callable($this->output)) {
+            call_user_func($this->output, $message);
         }
     }
 

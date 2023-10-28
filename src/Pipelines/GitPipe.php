@@ -26,6 +26,9 @@ class GitPipe implements Pipeline
         $checkout = Git::checkout($version);
 
         if (Updater::getCurrentVersion() != $version) {
+            if (is_callable($content['output'])) {
+                call_user_func($content['output'], 'git checkout failed: '.$checkout);
+            }
             return throw new \Exception('git checkout failed: '.$checkout);
         }
 

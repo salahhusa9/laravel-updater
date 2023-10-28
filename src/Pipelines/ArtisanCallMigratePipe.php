@@ -17,9 +17,17 @@ class ArtisanCallMigratePipe implements Pipeline
      */
     public function handle($content, Closure $next)
     {
+        if (is_callable($content['output'])) {
+            call_user_func($content['output'], 'Migrating...');
+        }
+
         Artisan::call('migrate', [
             '--force' => true,
         ]);
+
+        if (is_callable($content['output'])) {
+            call_user_func($content['output'], 'Migrated!');
+        }
 
         return $next($content);
     }
