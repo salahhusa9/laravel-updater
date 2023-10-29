@@ -116,50 +116,87 @@ GITHUB_TOKEN is a personal access token that you can create in your GitHub accou
 
 ## Basic usage
 
-Praesentium laudantium magni. Consequatur reiciendis aliquid nihil iusto ut in et. Quisquam ut et aliquid occaecati. Culpa veniam aut et voluptates amet perspiciatis. Qui exercitationem in qui. Vel qui dignissimos sit quae distinctio.
+After Installing package and add environment variables you can start use it.
 
-### Your first cache
+### Your first update
 
-Minima vel non iste debitis. Consequatur repudiandae et quod accusamus sit molestias consequatur aperiam. Et sequi ipsa eum voluptatibus ipsam. Et quisquam ut.
+you need understand how it's work. versions it's load from github releases and you can add your own releases.
+so you need create a release in your github repository and add a tag to it.
 
-Qui quae esse aspernatur fugit possimus. Quam sed molestiae temporibus. Eum perferendis dignissimos provident ea et. Et repudiandae quasi accusamus consequatur dolore nobis. Quia reiciendis necessitatibus a blanditiis iste quia. Ut quis et amet praesentium sapiente.
+[How Managing releases/versioning your projects (github)](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
 
-Atque eos laudantium. Optio odit aspernatur consequuntur corporis soluta quidem sunt aut doloribus. Laudantium assumenda commodi.
+after create your first release you can run this command to update your application:
 
-### Clearing the cache
+```bash
+php artisan updater:update
+```
 
-Vel aut velit sit dolor aut suscipit at veritatis voluptas. Laudantium tempore praesentium. Qui ut voluptatem.
+### After update
 
-Ea est autem fugiat velit esse a alias earum. Dolore non amet soluta eos libero est. Consequatur qui aliquam qui odit eligendi ut impedit illo dignissimos.
+you can run migration, seeders and cache...  after update by change config file.
 
-Ut dolore qui aut nam. Natus temporibus nisi voluptatum labore est ex error vel officia. Vero repellendus ut. Suscipit voluptate et placeat. Eius quo corporis ab et consequatur quisquam. Nihil officia facere dolorem occaecati alias deleniti deleniti in.
+```javascript
 
-### Adding middleware
+// run php artisan migrate after update?
+'migrate' => true,
 
-Officia nobis tempora maiores id iusto magni reprehenderit velit. Quae dolores inventore molestiae perspiciatis aut. Quis sequi officia quasi rem officiis officiis. Nesciunt ut cupiditate. Sunt aliquid explicabo enim ipsa eum recusandae. Vitae sunt eligendi et non beatae minima aut.
+// run seeders after update?
+'seeders' => [
+    // '\Database\Seeders\DatabaseSeeder::class',
+],
 
-Harum perferendis aut qui quibusdam tempore laboriosam voluptatum qui sed. Amet error amet totam exercitationem aut corporis accusantium dolorum. Perspiciatis aut animi et. Sed unde error ut aut rerum.
+// run php artisan cache:clear after update?
+'cache:clear' => true,
 
-Ut quo libero aperiam mollitia est repudiandae quaerat corrupti explicabo. Voluptas accusantium sed et doloribus voluptatem fugiat a mollitia. Numquam est magnam dolorem asperiores fugiat. Soluta et fuga amet alias temporibus quasi velit. Laudantium voluptatum perspiciatis doloribus quasi facere. Eveniet deleniti veniam et quia veritatis minus veniam perspiciatis.
+// run php artisan view:clear after update?
+'view:clear' => true,
 
----
+// run php artisan config:clear after update?
+'config:clear' => true,
+
+// run php artisan route:clear after update?
+'route:clear' => true,
+
+// run php artisan optimize after update?
+'optimize' => true,
+```
+
+there is olso pipelines after update:
+
+```javascript
+'after_update_pipelines' => [
+    // you can add your own pipelines here
+],
+```
+
+you can see how it's work in section of [advance use](/pipelines).
+
+### Before update
+
+by defult if is `maintenance_mode` is true, it's will be enable before update and disable after update.
+
+you can run pipelines before update:
+
+```javascript
+'before_update_pipelines' => [
+    // you can add your own pipelines here
+],
+```
+
+you can see how it's work in section of [advance use](/pipelines).
 
 ## Getting help
 
-Consequuntur et aut quisquam et qui consequatur eligendi. Necessitatibus dolorem sit. Excepturi cumque quibusdam soluta ullam rerum voluptatibus. Porro illo sequi consequatur nisi numquam nisi autem. Ut necessitatibus aut. Veniam ipsa voluptatem sed.
+If you're having trouble getting Laravel Updater up and running, help is just a click away.
 
 ### Submit an issue
 
-Inventore et aut minus ut voluptatem nihil commodi doloribus consequatur. Facilis perferendis nihil sit aut aspernatur iure ut dolores et. Aspernatur odit dignissimos. Aut qui est sint sint.
-
-Facere aliquam qui. Dolorem officia ipsam adipisci qui molestiae. Error voluptatem reprehenderit ex.
-
-Consequatur enim quia maiores aperiam et ipsum dicta. Quam ut sit facere sit quae. Eligendi veritatis aut ut veritatis iste ut adipisci illo.
+If you've found a bug or want to suggest a new feature, you can [submit an issue](https://github.com/salahhusa9/laravel-updater/issues)
 
 ### Join the community
 
-Praesentium facilis iste aliquid quo quia a excepturi. Fuga reprehenderit illo sequi voluptatem voluptatem omnis. Id quia consequatur rerum consectetur eligendi et omnis. Voluptates iusto labore possimus provident praesentium id vel harum quisquam. Voluptatem provident corrupti.
+If you need help, want to share an idea, or just want to chat about menus, you can join the [twitter](https://twitter.com/SBendyab).
 
-Eum et ut. Qui facilis est ipsa. Non facere quia sequi commodi autem. Dicta autem sit sequi omnis impedit. Eligendi amet dolorum magnam repudiandae in a.
+### Hire me
 
-Molestiae iusto ut exercitationem dolorem unde iusto tempora atque nihil. Voluptatem velit facere laboriosam nobis ea. Consequatur rerum velit ipsum ipsam. Et qui saepe consequatur minima laborum tempore voluptatum et. Quia eveniet eaque sequi consequatur nihil eos.
+If you need help with your Laravel application, you can [hire me](mailto:salahhusa9@gmail.com).
