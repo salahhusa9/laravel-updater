@@ -1,7 +1,7 @@
 ---
 title: Getting started
-pageTitle: Laravel Updater - Never miss the cache again.
-description: Cache every single thing your app could ever do ahead of time, so your code never even has to run at all.
+pageTitle: Laravel Updater - Getting started
+description: Update your Laravel application to the latest version with a single command.
 ---
 
 Learn how to get Laravel Updater set up in your project in under thirty minutes or it's free. {% .lead %}
