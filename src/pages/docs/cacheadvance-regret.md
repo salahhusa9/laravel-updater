@@ -1,5 +1,5 @@
 ---
-title: CacheAdvance.regret()
+title: Laravel Updater.regret()
 description: Quidem magni aut exercitationem maxime rerum eos.
 ---
 
