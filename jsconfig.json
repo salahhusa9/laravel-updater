@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "/laravel-update/",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
