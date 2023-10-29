@@ -7,6 +7,9 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    unoptimized: true,
+  },
   assetPrefix: process.env.NODE_ENV === 'production' ? '/laravel-updater/' : '',
   basePath: process.env.NODE_ENV === 'production' ? '/laravel-updater' : '',
 }
