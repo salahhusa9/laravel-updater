@@ -8,7 +8,7 @@ Learn how to get Laravel Updater set up in your project in under thirty minutes 
 
 {% quick-links %}
 
-{% quick-link title="Installation" icon="installation" href="/" description="Step-by-step guides to setting up your system and installing the package." /%}
+{% quick-link title="Installation" icon="installation" href="#installing" description="Step-by-step guides to setting up your system and installing the package." /%}
 
 {% quick-link title="Customisation and Advance Use" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
 
@@ -92,10 +92,24 @@ return [
 ];
 ```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
+You need olso add environment variables:
 
-{% callout title="You should know!" %}
-This is what a disclaimer message looks like. You might want to include inline `code` in it. Or maybe you’ll want to include a [link](/) in it. I don’t think we should get too carried away with other scenarios like lists or tables — that would be silly.
+```env
+GITHUB_TOKEN=
+GITHUB_USERNAME=
+GITHUB_REPOSITORY=
+```
+Example:
+
+```env
+GITHUB_TOKEN=ghp_1234567890
+GITHUB_USERNAME=salahhusa9
+GITHUB_REPOSITORY=laravel-updater
+```
+
+{% callout title="what is GITHUB_TOKEN" %}
+GITHUB_TOKEN is a personal access token that you can create in your GitHub account. You can find more information about how to create a personal access token [here](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing)
+
 {% /callout %}
 
 ---
