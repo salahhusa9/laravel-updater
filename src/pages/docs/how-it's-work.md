@@ -3,8 +3,6 @@ title: how it's work
 description: Learn how the internals work and contribute.
 ---
 
-## Quick start
-
 the proses of update your application is very simple, you just need to run this command:
 
 ```shell
