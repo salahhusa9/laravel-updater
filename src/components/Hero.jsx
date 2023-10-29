@@ -8,10 +8,14 @@ import { HeroBackground } from '@/components/HeroBackground'
 import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
 
-const codeLanguage = 'php'
-const code = `Updater::update();
+const codeLanguage = 'stylus'
+const code = ` 
+use Salahhusa9\\Updater\\Facades\\Updater;
+
+Updater::update();
 // or run this command
-php artisan updater:update`
+php artisan updater:update
+`
 
 const tabs = [
   { name: 'UpdaterController.php', isActive: true },

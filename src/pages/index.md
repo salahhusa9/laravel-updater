@@ -8,51 +8,88 @@ Learn how to get Laravel Updater set up in your project in under thirty minutes 
 
 {% quick-links %}
 
-{% quick-link title="Installation" icon="installation" href="/" description="Step-by-step guides to setting up your system and installing the library." /%}
+{% quick-link title="Installation" icon="installation" href="/" description="Step-by-step guides to setting up your system and installing the package." /%}
 
-{% quick-link title="Architecture guide" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
-
-{% quick-link title="Plugins" icon="plugins" href="/" description="Extend the library with third-party plugins or write your own." /%}
-
-{% quick-link title="API reference" icon="theming" href="/" description="Learn to easily customize and modify your app's visual design to fit your brand." /%}
+{% quick-link title="Customisation and Advance Use" icon="presets" href="/" description="Learn how the internals work and contribute." /%}
 
 {% /quick-links %}
-
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste.
 
 ---
 
 ## Quick start
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur.
+This is a useful package for update your Laravel application, and it can help simplify the process of update your application.
 
-### Installing dependencies
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+### Installing
+
+This is a useful package for building menus in your Laravel application, and it can help simplify the process of creating and managing menus in your application.
+
 
 ```shell
-npm install @tailwindlabs/cache-advance
+composer require salahhusa9/laravel-updater
 ```
 
-Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
+You can publish the config file with:
 
-{% callout type="warning" title="Oh no! Something bad happened!" %}
-This is what a disclaimer message looks like. You might want to include inline `code` in it. Or maybe you’ll want to include a [link](/) in it. I don’t think we should get too carried away with other scenarios like lists or tables — that would be silly.
-{% /callout %}
+```shell
+php artisan vendor:publish --tag="laravel-updater-config"
+```
 
-### Configuring the library
+### Configuring
 
-Sit commodi iste iure molestias qui amet voluptatem sed quaerat. Nostrum aut pariatur. Sint ipsa praesentium dolor error cumque velit tenetur quaerat exercitationem. Consequatur et cum atque mollitia qui quia necessitatibus.
+This the default config file:
 
-```js
-// cache-advance.config.js
-export default {
-  strategy: 'predictive',
-  engine: {
-    cpus: 12,
-    backups: ['./storage/cache.wtf'],
-  },
-}
+```javascript
+<?php
+
+// config for Salahhusa9/Updater
+return [
+
+    'git_path' => null,
+
+    'repository_source' => \Salahhusa9\Updater\RepositorySource\GithubRepository::class,
+    'github_token' => env('GITHUB_TOKEN'),
+    'github_username' => env('GITHUB_USERNAME'),
+    'github_repository' => env('GITHUB_REPOSITORY'),
+
+    'github_timeout' => 100,
+
+    'maintenance_mode' => true,
+    'maintenance_mode_secret' => env('MAINTENANCE_MODE_SECRET', false),
+
+    'before_update_pipelines' => [
+        // you can add your own pipelines here
+    ],
+
+    // run php artisan migrate after update?
+    'migrate' => false,
+
+    // run seeders after update?
+    'seeders' => [
+        // '\Database\Seeders\DatabaseSeeder::class',
+    ],
+
+    // run php artisan cache:clear after update?
+    'cache:clear' => false,
+
+    // run php artisan view:clear after update?
+    'view:clear' => false,
+
+    // run php artisan config:clear after update?
+    'config:clear' => false,
+
+    // run php artisan route:clear after update?
+    'route:clear' => false,
+
+    // run php artisan optimize after update?
+    'optimize' => false,
+
+    'after_update_pipelines' => [
+        // you can add your own pipelines here
+    ],
+
+];
 ```
 
 Possimus saepe veritatis sint nobis et quam eos. Architecto consequatur odit perferendis fuga eveniet possimus rerum cumque. Ea deleniti voluptatum deserunt voluptatibus ut non iste. Provident nam asperiores vel laboriosam omnis ducimus enim nesciunt quaerat. Minus tempora cupiditate est quod.
