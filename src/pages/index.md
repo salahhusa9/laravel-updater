@@ -169,7 +169,7 @@ there is olso pipelines after update:
 ],
 ```
 
-you can see how it's work in section of [advance use](/pipelines).
+you can see how it's work in section of [pipelines](/docs/how-it's-work).
 
 ### Before update
 

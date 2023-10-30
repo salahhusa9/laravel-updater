@@ -20,33 +20,29 @@ const navigation = [
     ],
   },
   {
-    title: 'Core concepts',
+    title: 'Advanced guides',
     links: [
-      { title: 'Understanding caching', href: '/docs/understanding-caching' },
-      {
-        title: 'Predicting user behavior',
-        href: '/docs/predicting-user-behavior',
+      { 
+        title: 'Run code before or after update', 
+        href: '/docs/run-code-before-or-after-update' 
       },
-      { title: 'Basics of time-travel', href: '/docs/basics-of-time-travel' },
       {
-        title: 'Introduction to string theory',
-        href: '/docs/introduction-to-string-theory',
-      },
-      { title: 'The butterfly effect', href: '/docs/the-butterfly-effect' },
+        title: 'Configuring the package',
+        href: '/docs/configuring'
+      }
     ],
   },
   {
-    title: 'Advanced guides',
+    title: 'Core concepts',
     links: [
-      { title: 'Writing plugins', href: '/docs/writing-plugins' },
-      { title: 'Neuralink integration', href: '/docs/neuralink-integration' },
-      { title: 'Temporal paradoxes', href: '/docs/temporal-paradoxes' },
-      { title: 'Testing', href: '/docs/testing' },
-      { title: 'Compile-time caching', href: '/docs/compile-time-caching' },
-      {
-        title: 'Predictive data generation',
-        href: '/docs/predictive-data-generation',
+      { 
+        title: 'How it\'s work', 
+        href: '/docs/how-it\'s-work' 
       },
+      {
+        title: 'Repository Source',
+        href: '/docs/repository-source'
+      }
     ],
   },
   // {
