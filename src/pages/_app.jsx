@@ -15,6 +15,7 @@ function getNodeText(node) {
     }
     text += getNodeText(child)
   }
+
   return text
 }
 
@@ -50,7 +51,7 @@ function collectHeadings(nodes, slugify = slugifyWithCounter()) {
 }
 
 export default function App({ Component, pageProps }) {
-  let title = pageProps.markdoc?.frontmatter.title
+  let title = pageProps.markdoc?.frontmatter.title;
 
   let pageTitle =
     pageProps.markdoc?.frontmatter.pageTitle ||
@@ -62,12 +63,15 @@ export default function App({ Component, pageProps }) {
     ? collectHeadings(pageProps.markdoc.content)
     : []
 
+
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
-        {tumb && <meta name="image" content={tumb} />}
+        {/* set image tumb.png in meta tag of image */}
+        <meta property="image" content={tumb.src} />
+        <meta property="og:image" content={tumb.src} />
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
