@@ -5,9 +5,9 @@ import Router from 'next/router'
 import { DocSearchModal, useDocSearchKeyboardEvents } from '@docsearch/react'
 
 const docSearchConfig = {
-  appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID,
-  apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY,
-  indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME,
+  appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID ?? '2IKUIHFDA9',
+  apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY ?? '5e2d5accb7736426b69889293aab263e',
+  indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME ?? 'docsearch',
   searchParameters: {
     facetFilters: ['language:en', 'version:1.0.0'],
   },

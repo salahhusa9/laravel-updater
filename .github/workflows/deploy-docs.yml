@@ -77,16 +77,6 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
-      - name: env file
-        run: |
-          echo "
-          NEXT_PUBLIC_DOCSEARCH_APP_ID=${{ secrets.NEXT_PUBLIC_DOCSEARCH_APP_ID }}
-          NEXT_PUBLIC_DOCSEARCH_API_KEY=${{ secrets.NEXT_PUBLIC_DOCSEARCH_API_KEY }}
-          NEXT_PUBLIC_DOCSEARCH_INDEX_NAME=${{ secrets.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME }}
-          " >> .env
-      - name: Copy env file
-        run: |
-          cp .env out/.env
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
