@@ -14,7 +14,7 @@ You can support us by [buying me a coffee](https://github.com/sponsors/salahhusa
 <!-- docs in salahhusa9.Com/laravel-updater -->
 
 ## Docs
-You find the docs in [salahhusa9.com/laravel-updater](https://salahhusa9.com/laravel-updater)
+You find the **docs** in [salahhusa9.com/laravel-updater](https://salahhusa9.com/laravel-updater)
 
 ## Testing
 
