@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { slugifyWithCounter } from '@sindresorhus/slugify'
+import tumb from '@/images/tumb.png'
 
 import { Layout } from '@/components/Layout'
 
@@ -66,6 +67,7 @@ export default function App({ Component, pageProps }) {
       <Head>
         <title>{pageTitle}</title>
         {description && <meta name="description" content={description} />}
+        {tumb && <meta name="image" content={tumb} />}
       </Head>
       <Layout title={title} tableOfContents={tableOfContents}>
         <Component {...pageProps} />
