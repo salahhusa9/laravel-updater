@@ -8,6 +8,10 @@ const docSearchConfig = {
   appId: process.env.NEXT_PUBLIC_DOCSEARCH_APP_ID,
   apiKey: process.env.NEXT_PUBLIC_DOCSEARCH_API_KEY,
   indexName: process.env.NEXT_PUBLIC_DOCSEARCH_INDEX_NAME,
+  searchParameters: {
+    facetFilters: ['language:en', 'version:1.0.0'],
+  },
+  insights: true,
 }
 
 function Hit({ hit, children }) {
