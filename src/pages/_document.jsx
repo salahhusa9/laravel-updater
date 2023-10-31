@@ -43,6 +43,14 @@ export default function Document() {
     <Html className="antialiased [font-feature-settings:'ss01']" lang="en">
       <Head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-HV1BVMHB0D"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-HV1BVMHB0D');
+        </script>
       </Head>
       <body className="bg-white dark:bg-slate-900">
         <Main />
