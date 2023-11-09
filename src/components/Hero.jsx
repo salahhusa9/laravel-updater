@@ -9,14 +9,21 @@ import blurCyanImage from '@/images/blur-cyan.png'
 import blurIndigoImage from '@/images/blur-indigo.png'
 
 const codeLanguage = 'stylus'
-const code = ` 
-use Salahhusa9\\Updater\\Facades\\Updater;
-
-Updater::update();
-// or run this command
+const code = `//From
+git pull
+git checkout v1.0.0
+php artisan migrate
+php arinsan db:seed --class=DatabaseSeeder
+php artisan cache:clear
+php artisan view:clear
+php artisan config:clear
+php artisan route:clear
+php artisan optimize
+// To
 php artisan updater:update
+// or
+Updater::update();
 `
-
 const tabs = [
   { name: 'UpdaterController.php', isActive: true },
   { name: 'package.json', isActive: false },

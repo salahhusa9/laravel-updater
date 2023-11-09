@@ -20,6 +20,20 @@ Learn how to get Laravel Updater set up in your project in under thirty minutes 
 
 This is a useful package for update your Laravel application, and it can help simplify the process of update your application.
 
+```shell
+// From
+git pull
+php artisan migrate
+php arinsan db:seed --class=DatabaseSeeder
+php artisan cache:clear
+php artisan view:clear
+php artisan config:clear
+php artisan route:clear
+php artisan optimize
+// To
+php artisan updater:update
+```
+
 
 ### Installing
 
