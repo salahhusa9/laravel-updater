@@ -21,10 +21,14 @@ class SeedersPipe implements Pipeline
             call_user_func($content['output'], 'Seeding...');
         }
 
-        Artisan::call('db:seed', [
-            '--class' => implode(' --class=', config('updater.seeders')),
-            '--force' => true,
-        ]);
+        $classes = config('updater.seeders', []);
+
+        foreach ($classes as $class) {
+            Artisan::call('db:seed', [
+                '--class' => $class,
+                '--force' => true,
+            ]);
+        }
 
         if (is_callable($content['output'])) {
             call_user_func($content['output'], 'Seeded!');
