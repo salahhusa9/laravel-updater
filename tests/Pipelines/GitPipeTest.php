@@ -2,7 +2,6 @@
 
 namespace Salahhusa9\Updater\Tests\Pipelines;
 
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Process;
 use Salahhusa9\Updater\Pipelines\GitPipe;
 use Salahhusa9\Updater\Tests\TestCase;
@@ -17,7 +16,7 @@ class GitPipeTest extends TestCase
 
         $messages = [
             'Downloading version 1.0.0 ...',
-            'Checkout success'
+            'Checkout success',
         ];
 
         $content = [
@@ -44,7 +43,7 @@ class GitPipeTest extends TestCase
 
         $messages = [
             'Downloading version 1.0.0 ...',
-            'git checkout failed: error'
+            'git checkout failed: error',
         ];
 
         $content = [

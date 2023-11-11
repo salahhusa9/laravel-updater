@@ -2,8 +2,6 @@
 
 namespace Salahhusa9\Updater\Tests\Pipelines;
 
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Process;
 use Salahhusa9\Updater\Pipelines\SeedersPipe;
 use Salahhusa9\Updater\Tests\TestCase;
 
@@ -27,9 +25,8 @@ class SeedersPipeTest extends TestCase
         };
 
         config()->set('updater.seeders', [
-            
-        ]);
 
+        ]);
 
         app()->make(SeedersPipe::class)->handle($content, $next);
     }

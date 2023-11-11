@@ -2,7 +2,6 @@
 
 namespace Salahhusa9\Updater\Tests\Pipelines;
 
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Process;
 use Salahhusa9\Updater\Pipelines\ArtisanCallConfigClearPipe;
 use Salahhusa9\Updater\Tests\TestCase;
