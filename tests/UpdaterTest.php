@@ -1,13 +1,11 @@
 <?php
 
-use Salahhusa9\Updater\Facades\Updater;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Process;
+use Salahhusa9\Updater\Facades\Updater;
 use Salahhusa9\Updater\Tests\TestCase;
-use Salahhusa9\Updater\Updater as UpdaterUpdater;
 
 class UpdaterTest extends TestCase
 {
