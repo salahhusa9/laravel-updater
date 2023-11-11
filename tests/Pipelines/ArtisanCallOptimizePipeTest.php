@@ -12,7 +12,7 @@ class ArtisanCallOptimizePipeTest extends TestCase
     public function test_run_handle()
     {
         Process::fake([
-            'php artisan optimize' => Process::result('optimize'),
+            '*' => Process::result('optimize'),
         ]);
 
         $messages = [

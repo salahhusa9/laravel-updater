@@ -12,7 +12,7 @@ class ArtisanCallCacheClearPipeTest extends TestCase
     public function test_run_handle()
     {
         Process::fake([
-            'php artisan cache:clear' => Process::result('cache:clear'),
+            '*' => Process::result('cache:clear'),
         ]);
 
         $messages = [

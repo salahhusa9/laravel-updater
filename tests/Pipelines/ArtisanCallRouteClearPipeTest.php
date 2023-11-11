@@ -12,7 +12,7 @@ class ArtisanCallRouteClearPipeTest extends TestCase
     public function test_run_handle()
     {
         Process::fake([
-            'php artisan route:clear' => Process::result('route:clear'),
+            '*' => Process::result('route:clear'),
         ]);
 
         $messages = [

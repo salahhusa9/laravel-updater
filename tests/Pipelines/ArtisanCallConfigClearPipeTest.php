@@ -12,7 +12,7 @@ class ArtisanCallConfigClearPipeTest extends TestCase
     public function test_run_handle()
     {
         Process::fake([
-            'php artisan config:clear' => Process::result('config:clear'),
+            '*' => Process::result('config:clear'),
         ]);
 
         $messages = [

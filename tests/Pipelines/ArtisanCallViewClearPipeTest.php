@@ -12,7 +12,7 @@ class ArtisanCallViewClearPipeTest extends TestCase
     public function test_run_handle()
     {
         Process::fake([
-            'php artisan view:clear' => Process::result('view:clear'),
+            '*' => Process::result('view:clear'),
         ]);
 
         $messages = [

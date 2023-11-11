@@ -12,7 +12,7 @@ class ArtisanCallMigratePipeTest extends TestCase
     public function test_run_handle()
     {
         Process::fake([
-            'php artisan migrate' => Process::result('migrate'),
+            '*' => Process::result('migrate'),
         ]);
 
         $messages = [
