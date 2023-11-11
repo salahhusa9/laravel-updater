@@ -4,6 +4,7 @@ namespace Salahhusa9\Updater\RepositorySource;
 
 use Illuminate\Support\Facades\Http;
 use Salahhusa9\Updater\Contracts\Repository;
+use Salahhusa9\Updater\Exceptions\GithubConfigException;
 
 class GithubRepository implements Repository
 {
@@ -80,18 +81,20 @@ class GithubRepository implements Repository
      *
      * @return void
      */
-    private function checkConfig()
+    public function checkConfig()
     {
         if (config('updater.github_token') == null) {
-            throw new \Exception('Please set GITHUB_TOKEN in .env file');
+            throw new GithubConfigException('Please set GITHUB_TOKEN in .env file');
         }
 
         if (config('updater.github_username') == null) {
-            throw new \Exception('Please set GITHUB_USERNAME in .env file');
+            throw new GithubConfigException('Please set GITHUB_USERNAME in .env file');
         }
 
         if (config('updater.github_repository') == null) {
-            throw new \Exception('Please set GITHUB_REPOSITORY in .env file');
+            throw new GithubConfigException('Please set GITHUB_REPOSITORY in .env file');
         }
+
+        return true;
     }
 }
