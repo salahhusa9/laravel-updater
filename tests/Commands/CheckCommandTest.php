@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Event;
 use Salahhusa9\Updater\Commands\CheckCommand;
 use Salahhusa9\Updater\Events\NewVersionAvailable;
 use Salahhusa9\Updater\Facades\Updater;
-use Salahhusa9\Updater\Tests\TestCase;
 
 class CheckCommandTest extends TestCase
 {
