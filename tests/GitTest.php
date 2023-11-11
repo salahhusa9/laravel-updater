@@ -107,6 +107,10 @@ class GitTest extends TestCase
 
     public function test_git_auth(): void
     {
+        config()->set('updater.github_token', 'token');
+        config()->set('updater.github_username', 'username');
+        config()->set('updater.github_repository', 'repository');
+
         Process::fake([
             'git remote set-url origin https://'.config('updater.github_username').':'.config('updater.github_token').'@github.com/'.config('updater.github_username').'/'.config('updater.github_repository').'.git' => Process::result(''),
         ]);

@@ -17,7 +17,7 @@ class Updater
      */
     public function update(callable $output = null): string
     {
-        if (! is_callable($output)) {
+        if (! is_null($output) and ! is_callable($output)) {
             throw new \Exception('Output must be callable');
         }
 
@@ -204,7 +204,7 @@ class Updater
     public function getLatestVersionData(): array
     {
         return Cache::remember('latest_version_data', 5, function () {
-            return app(Repository::class)->getLatestVersionData();
+            return app(Repository::class)->getLatestVersionData()->toArray();
         });
     }
 
