@@ -29,7 +29,7 @@ class GitPipe implements Pipeline
         Git::pull();
         $checkout = Git::checkout($version);
 
-        if ($checkout != 'TEST' and  Updater::getCurrentVersion() != $version) {
+        if ($checkout != 'TEST' and Updater::getCurrentVersion() != $version) {
             if (is_callable($content['output'])) {
                 call_user_func($content['output'], 'git checkout failed: '.$checkout);
             }
