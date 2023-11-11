@@ -3,7 +3,6 @@
 namespace Salahhusa9\Updater\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Process;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Salahhusa9\Updater\UpdaterServiceProvider;
 

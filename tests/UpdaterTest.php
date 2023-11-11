@@ -40,7 +40,7 @@ class UpdaterTest extends TestCase
             'git pull' => '',
             'git checkout 1.0.1' => 'TEST',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
-            'git fetch' => ''
+            'git fetch' => '',
         ]);
 
         $this->assertEquals('1.0.1', Updater::getLatestVersion());
@@ -65,7 +65,7 @@ class UpdaterTest extends TestCase
             'git pull' => '',
             'git checkout 1.0.1' => 'TEST',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
-            'git fetch' => ''
+            'git fetch' => '',
         ]);
 
         $this->assertEquals(['tag_name' => '1.0.1'], Updater::getLatestVersionData());
@@ -98,7 +98,7 @@ class UpdaterTest extends TestCase
             'git pull' => '',
             'git checkout 1.0.1' => 'TEST',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
-            'git fetch' => ''
+            'git fetch' => '',
         ]);
 
         $this->assertEquals(['1.0.0', '1.1.0', '2.0.0'], Updater::versions());
@@ -123,7 +123,7 @@ class UpdaterTest extends TestCase
             'git pull' => '',
             'git checkout 1.0.1' => 'TEST',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
-            'git fetch' => ''
+            'git fetch' => '',
         ]);
 
         $this->assertEquals(['current_version' => '1.0.0', 'latest_version' => '1.0.1'], Updater::newVersionAvailable());
@@ -151,7 +151,7 @@ class UpdaterTest extends TestCase
             'git pull' => '',
             'git checkout 1.0.1' => 'TEST',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
-            'git fetch' => ''
+            'git fetch' => '',
         ]);
 
         // Artisan::shouldReceive('call')->once()->with('up');
@@ -164,7 +164,7 @@ class UpdaterTest extends TestCase
             'git pull origin HEAD' => '',
             'git checkout 1.0.1' => '...',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
-            'git fetch' => ''
+            'git fetch' => '',
         ]);
 
         $this->expectException(Exception::class);
