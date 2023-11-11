@@ -9,7 +9,7 @@ class GitFailedException extends Exception
     /**
      * GitFailedException constructor.
      *
-     * @param string $message
+     * @param  string  $message
      */
     public function __construct($message)
     {
