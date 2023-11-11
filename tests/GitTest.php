@@ -89,7 +89,7 @@ class GitTest extends TestCase
                 output: 'Test output',
                 errorOutput: 'Test error output',
                 exitCode: 1,
-            )
+            ),
         ]);
 
         // change config git_path to git, because git path changed between windows and linux
@@ -108,7 +108,7 @@ class GitTest extends TestCase
     public function test_git_auth(): void
     {
         Process::fake([
-            'git remote set-url origin https://'.config('updater.github_username').':'.config('updater.github_token').'@github.com/'.config('updater.github_username').'/'.config('updater.github_repository').'.git' => Process::result('')
+            'git remote set-url origin https://'.config('updater.github_username').':'.config('updater.github_token').'@github.com/'.config('updater.github_username').'/'.config('updater.github_repository').'.git' => Process::result(''),
         ]);
 
         config()->set('updater.git_path', 'git');
@@ -126,7 +126,7 @@ class GitTest extends TestCase
                 output: 'Test output',
                 errorOutput: 'Test error output',
                 exitCode: 1,
-            )
+            ),
         ]);
 
         config()->set('updater.git_path', 'git');
@@ -155,7 +155,7 @@ class GitTest extends TestCase
                 output: 'Test output',
                 errorOutput: 'Test error output',
                 exitCode: 1,
-            )
+            ),
         ]);
 
         config()->set('updater.git_path', 'git');
@@ -184,7 +184,7 @@ class GitTest extends TestCase
                 output: 'Test output',
                 errorOutput: 'Test error output',
                 exitCode: 1,
-            )
+            ),
         ]);
 
         config()->set('updater.git_path', 'git');
@@ -213,7 +213,7 @@ class GitTest extends TestCase
                 output: 'Test output',
                 errorOutput: 'Test error output',
                 exitCode: 1,
-            )
+            ),
         ]);
 
         config()->set('updater.git_path', 'git');
