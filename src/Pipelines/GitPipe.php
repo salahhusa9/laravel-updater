@@ -26,7 +26,7 @@ class GitPipe implements Pipeline
 
         Git::auth();
         Git::fetch();
-        Git::pull();
+
         $checkout = Git::checkout($version);
 
         if ($checkout != 'TEST' and Updater::getCurrentVersion() != $version) {
