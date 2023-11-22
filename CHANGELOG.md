@@ -2,6 +2,20 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## Laravel Updater v1 - 2023-11-21
+
+### What's Changed
+
+- Update actions/setup-node action to v4 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/14
+- Git failed exception by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/17
+- Tests pipelines by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/18
+- Tests Repository Source by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/19
+- Command test by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/20
+- updater facade tests by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/21
+- Remove Git Pull in update by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/22
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v0.0.1...v1.0.0
+
 ## Laravel Updater Beta - 2023-10-31
 
 ### What's Changed
