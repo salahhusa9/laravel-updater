@@ -1,6 +1,6 @@
 {
     "name": "salahhusa9/laravel-updater",
-    "description": "This is my package laravel-updater",
+    "description": "Laravel Updater is a simple yet powerful package for updater your Laravel applications. It makes it easy to upgrade your application to the latest version with just one command.",
     "keywords": [
         "salahhusa9",
         "laravel",
