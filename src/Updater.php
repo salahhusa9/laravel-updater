@@ -15,7 +15,7 @@ class Updater
     /**
      * update
      */
-    public function update(callable $output = null): string
+    public function update(?callable $output = null): string
     {
         if (! is_null($output) and ! is_callable($output)) {
             throw new \Exception('Output must be callable');

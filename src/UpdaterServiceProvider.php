@@ -22,7 +22,6 @@ class UpdaterServiceProvider extends PackageServiceProvider
             ->name('laravel-updater')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_laravel-updater_table')
             ->hasCommands(UpdaterCommand::class, CheckCommand::class);
 
         $this->app->singleton(Repository::class, function () {
