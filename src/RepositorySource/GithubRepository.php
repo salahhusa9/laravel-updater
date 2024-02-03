@@ -15,7 +15,7 @@ class GithubRepository implements Repository
     {
         $this->checkConfig();
 
-        return isset($this->getLatestVersionData()['message']) ? throw new \RuntimeException($this->getLatestVersionData()['message']) : $this->getLatestVersionData()['tag_name'];
+        return isset($this->getLatestVersionData()['message']) ? throw new \Exception($this->getLatestVersionData()['message']) : $this->getLatestVersionData()['tag_name'];
     }
 
     /**
@@ -48,7 +48,7 @@ class GithubRepository implements Repository
         $versionsData = $this->getVersionsData();
 
         if (isset($versionsData['message'])) {
-            throw new \RuntimeException($versionsData['message']);
+            throw new \Exception($versionsData['message']);
         }
 
         return $versionsData->map(function ($version) {

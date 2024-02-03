@@ -134,7 +134,7 @@ class Updater
 
                 event(new Events\UpdateFailed($current_version_in_past, $version, $th->getMessage()));
 
-                return throw $th;
+                throw $th;
             }
         } else {
             $this->output('No new version available');
