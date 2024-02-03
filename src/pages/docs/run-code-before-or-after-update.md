@@ -73,4 +73,4 @@ generally don't run any command that link to composer.
 {% /callout %}
 
 
-you can see how it's work in section of [pipelines](/docs/how-it's-work).
+you can see how it's work in section of [pipelines](https://salahhusa9.com/laravel-updater/docs/how-it's-work).

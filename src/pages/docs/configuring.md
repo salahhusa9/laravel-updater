@@ -105,6 +105,6 @@ you can run pipelines after update:
     // you can add your own pipelines here
 ],
 ```
-for more information about pipelines, see [Run Code before or after update](/docs/run-code-before-or-after-update).
+for more information about pipelines, see [Run Code before or after update](https://salahhusa9.com/laravel-updater/docs/run-code-before-or-after-update).
 
 

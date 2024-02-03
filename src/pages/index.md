@@ -183,7 +183,7 @@ there is olso pipelines after update:
 ],
 ```
 
-you can see how it's work in section of [pipelines](/docs/how-it's-work).
+you can see how it's work in section of [pipelines](https://salahhusa9.com/laravel-updater/docs/how-it's-work).
 
 ### Before update
 
@@ -197,7 +197,7 @@ you can run pipelines before update:
 ],
 ```
 
-you can see how it's work in section of [advance use](/pipelines).
+you can see how it's work in section of [advance use](https://salahhusa9.com/laravel-updater/docs/pipelines).
 
 ## Getting help
 
