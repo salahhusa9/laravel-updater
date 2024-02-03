@@ -18,7 +18,7 @@ class Updater
     public function update(?callable $output = null): string
     {
         if (! is_null($output) and ! is_callable($output)) {
-            throw new \Exception('Output must be callable');
+            throw new \RuntimeException('Output must be callable');
         }
 
         $this->output = $output;
@@ -97,11 +97,11 @@ class Updater
                 if (is_array($pipelines) && count($pipelines) > 0) {
                     foreach ($pipelines as $pipeline) {
                         if (! is_subclass_of($pipeline, \Salahhusa9\Updater\Contracts\Pipeline::class)) {
-                            throw new \Exception('Pipeline '.$pipeline.' is not implemented Pipeline contract:'.\Salahhusa9\Updater\Contracts\Pipeline::class);
+                            throw new \RuntimeException('Pipeline '.$pipeline.' is not implemented Pipeline contract:'.\Salahhusa9\Updater\Contracts\Pipeline::class);
                         }
                     }
                 } else {
-                    throw new \Exception('Pipelines is not array or empty');
+                    throw new \RuntimeException('Pipelines is not array or empty');
                 }
 
                 $this->output('Start Updating to version '.$version);

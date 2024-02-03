@@ -2,9 +2,9 @@
 
 namespace Salahhusa9\Updater\Exceptions;
 
-use Exception;
+use RuntimeException;
 
-class GithubConfigException extends Exception
+class GithubConfigException extends RuntimeException
 {
     /**
      * GithubConfigException constructor.

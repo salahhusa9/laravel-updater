@@ -2,9 +2,9 @@
 
 namespace Salahhusa9\Updater\Exceptions;
 
-use Exception;
+use RuntimeException;
 
-class GitFailedException extends Exception
+class GitFailedException extends RuntimeException
 {
     /**
      * GitFailedException constructor.

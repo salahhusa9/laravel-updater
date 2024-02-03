@@ -34,7 +34,7 @@ class GitPipe implements Pipeline
                 call_user_func($content['output'], 'git checkout failed: '.$checkout);
             }
 
-            return throw new \Exception('git checkout failed: '.$checkout);
+            return throw new \RuntimeException('git checkout failed: '.$checkout);
         } else {
             if (is_callable($content['output'])) {
                 call_user_func($content['output'], 'Checkout success');
