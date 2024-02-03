@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v1.0.1 - 2024-02-03
+
+### What's Changed
+
+* Update actions/upload-pages-artifact action to v3 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/28
+* Update actions/deploy-pages action to v4 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/27
+* Bump aglipanci/laravel-pint-action from 2.3.0 to 2.3.1 by @dependabot in https://github.com/salahhusa9/laravel-updater/pull/30
+* remove migration file and in configure Package by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/36
+* Bump actions/cache from 3 to 4 by @dependabot in https://github.com/salahhusa9/laravel-updater/pull/32
+* [Update exception classes to use RuntimeException instead of Exception](https://github.com/salahhusa9/laravel-updater/commit/705485c97efaa161da81b3cc825e2b20c1f43d6f)
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.0.0...v1.0.1
+
 ## Laravel Updater v1 - 2023-11-21
 
 ### What's Changed
