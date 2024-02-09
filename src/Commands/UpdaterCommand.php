@@ -15,18 +15,18 @@ class UpdaterCommand extends Command
     {
         $newVersionAvailable = Updater::newVersionAvailable();
         if (! is_array($newVersionAvailable)) {
-            $this->error('No new version available');
+            $this->components->error('No new version available');
 
             return self::FAILURE;
         }
 
-        $this->comment('Updating to version '.$newVersionAvailable['latest_version']);
+        $this->components->info('Updating to version '.$newVersionAvailable['latest_version']);
 
         Updater::update(output: function ($message) {
-            $this->comment($message);
+            $this->components->task($message);
         });
 
-        $this->info('Application updated! You are now on version '.Updater::getCurrentVersion().'!');
+        $this->components->twoColumnDetails('Application updated', 'You are now on version '.Updater::getCurrentVersion());
 
         return self::SUCCESS;
     }
