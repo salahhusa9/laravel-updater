@@ -15,7 +15,7 @@ class ArtisanCallConfigClearPipeTest extends TestCase
         ]);
 
         $messages = [
-            'Clearing config cache...',
+            'Start clearing config cache',
             'Config cache cleared!',
         ];
 

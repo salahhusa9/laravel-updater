@@ -18,7 +18,7 @@ class ArtisanCallViewClearPipe implements Pipeline
     public function handle($content, Closure $next)
     {
         if (is_callable($content['output'])) {
-            call_user_func($content['output'], 'Clearing view cache...');
+            call_user_func($content['output'], 'Start clearing view cache');
         }
 
         Artisan::call('view:clear');

@@ -18,7 +18,7 @@ class ArtisanCallCacheClearPipe implements Pipeline
     public function handle($content, Closure $next)
     {
         if (is_callable($content['output'])) {
-            call_user_func($content['output'], 'Clearing cache...');
+            call_user_func($content['output'], 'Start clearing cache');
         }
 
         Artisan::call('cache:clear');

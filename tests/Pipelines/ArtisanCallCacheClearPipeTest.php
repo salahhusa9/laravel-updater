@@ -15,7 +15,7 @@ class ArtisanCallCacheClearPipeTest extends TestCase
         ]);
 
         $messages = [
-            'Clearing cache...',
+            'Start clearing cache',
             'Cache cleared!',
         ];
 

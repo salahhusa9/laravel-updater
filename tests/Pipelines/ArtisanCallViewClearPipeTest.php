@@ -15,7 +15,7 @@ class ArtisanCallViewClearPipeTest extends TestCase
         ]);
 
         $messages = [
-            'Clearing view cache...',
+            'Start clearing view cache',
             'View cache cleared!',
         ];
 

@@ -16,12 +16,12 @@ class CheckCommand extends Command
     {
         $newVersionAvailable = Updater::newVersionAvailable();
         if (! is_array($newVersionAvailable)) {
-            $this->info('No new version available');
+            $this->components->info('No new version available');
 
             return self::SUCCESS;
         }
 
-        $this->info('New version available: '.$newVersionAvailable['latest_version']);
+        $this->components->info('New version available: '.$newVersionAvailable['latest_version']);
 
         event(new NewVersionAvailable($newVersionAvailable['current_version'], $newVersionAvailable['latest_version']));
 

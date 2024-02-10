@@ -15,7 +15,7 @@ class ArtisanCallRouteClearPipeTest extends TestCase
         ]);
 
         $messages = [
-            'Clearing route cache...',
+            'Start clearing route cache',
             'Route cache cleared!',
         ];
 
