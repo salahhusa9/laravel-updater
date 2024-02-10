@@ -26,7 +26,7 @@ class UpdaterCommand extends Command
             $this->components->task($message);
         });
 
-        $this->components->twoColumnDetail('Application updated', 'You are now on version '.Updater::getCurrentVersion());
+        $this->components->twoColumnDetail('Application updated', Updater::getCurrentVersion());
 
         return self::SUCCESS;
     }
