@@ -18,7 +18,7 @@ class ArtisanCallRouteClearPipe implements Pipeline
     public function handle($content, Closure $next)
     {
         if (is_callable($content['output'])) {
-            call_user_func($content['output'], 'Clearing route cache...');
+            call_user_func($content['output'], 'Start clearing route cache');
         }
 
         Artisan::call('route:clear');

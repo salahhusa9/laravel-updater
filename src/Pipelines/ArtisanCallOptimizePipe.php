@@ -18,7 +18,7 @@ class ArtisanCallOptimizePipe implements Pipeline
     public function handle($content, Closure $next)
     {
         if (is_callable($content['output'])) {
-            call_user_func($content['output'], 'Optimizing...');
+            call_user_func($content['output'], 'Start optimizing');
         }
 
         Artisan::call('optimize');
