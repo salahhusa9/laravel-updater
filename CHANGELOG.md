@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v1.0.2 - 2024-02-10
+
+### What's Changed
+
+* new ui output by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/37
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.0.1...v1.0.2
+
 ## v1.0.1 - 2024-02-03
 
 ### What's Changed
