@@ -15,7 +15,7 @@ class ArtisanCallOptimizePipeTest extends TestCase
         ]);
 
         $messages = [
-            'Optimizing...',
+            'Start optimizing',
             'Optimized!',
         ];
 

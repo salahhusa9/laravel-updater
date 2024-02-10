@@ -15,7 +15,7 @@ class ArtisanCallMigratePipeTest extends TestCase
         ]);
 
         $messages = [
-            'Migrating...',
+            'Start migrating',
             'Migrated!',
         ];
 

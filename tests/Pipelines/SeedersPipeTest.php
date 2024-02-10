@@ -10,7 +10,7 @@ class SeedersPipeTest extends TestCase
     public function test_run_handle()
     {
         $messages = [
-            'Seeding...',
+            'Start seeding',
             'Seeded!',
         ];
 

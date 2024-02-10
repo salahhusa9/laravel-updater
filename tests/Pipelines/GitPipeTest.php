@@ -15,7 +15,7 @@ class GitPipeTest extends TestCase
         ]);
 
         $messages = [
-            'Downloading version 1.0.0 ...',
+            'Start downloading version 1.0.0',
             'Checkout success',
         ];
 
@@ -42,7 +42,7 @@ class GitPipeTest extends TestCase
         ]);
 
         $messages = [
-            'Downloading version 1.0.0 ...',
+            'Start downloading version 1.0.0',
             'git checkout failed: error',
         ];
 
