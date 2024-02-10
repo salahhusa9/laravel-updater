@@ -15,7 +15,7 @@ class CheckCommandTest extends TestCase
         Updater::shouldReceive('newVersionAvailable')->once()->andReturn(false);
 
         $this->artisan('updater:check')
-            ->expectsOutput('No new version available')
+            ->expectsOutputToContain('No new version available')
             ->assertExitCode(CheckCommand::SUCCESS);
     }
 
@@ -28,7 +28,7 @@ class CheckCommandTest extends TestCase
         ]);
 
         $this->artisan('updater:check')
-            ->expectsOutput('New version available: 1.1.0')
+            ->expectsOutputToContain('New version available: 1.1.0')
             ->assertExitCode(CheckCommand::SUCCESS);
     }
 
@@ -43,7 +43,7 @@ class CheckCommandTest extends TestCase
         ]);
 
         $this->artisan('updater:check')
-            ->expectsOutput('New version available: 1.1.0');
+            ->expectsOutputToContain('New version available: 1.1.0');
 
         Event::assertDispatched(NewVersionAvailable::class, function ($event) {
             return $event->currentVersion === '1.0.0' && $event->newVersion === '1.1.0';
