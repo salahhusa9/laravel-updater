@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v1.1.0 - 2024-03-12
+
+### What's Changed
+
+* Add support of Laravel 11 by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/38
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.0.2...v1.1.0
+
 ## v1.0.2 - 2024-02-10
 
 ### What's Changed
