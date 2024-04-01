@@ -108,7 +108,7 @@ class Git
      */
     public static function checkout($branch)
     {
-        $process = Process::run(self::gitPath() . ' checkout ' . $branch);
+        $process = Process::run(self::gitPath() . ' checkout ' . $branch . ' -f');
 
         if ($process->failed()) {
             throw new GitFailedException('this command failed: ' . $process->command() . ' with message: ' . $process->errorOutput());
