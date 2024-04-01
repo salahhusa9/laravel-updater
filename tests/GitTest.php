@@ -170,7 +170,7 @@ class GitTest extends TestCase
     public function test_git_checkout(): void
     {
         Process::fake([
-            'git checkout branch-name' => Process::result(''),
+            'git checkout branch-name -f' => Process::result(''),
         ]);
 
         config()->set('updater.git_path', 'git');
@@ -184,7 +184,7 @@ class GitTest extends TestCase
         $this->expectExceptionMessage('Test error output');
 
         Process::fake([
-            'git checkout branch-name' => Process::result(
+            'git checkout branch-name -f' => Process::result(
                 output: 'Test output',
                 errorOutput: 'Test error output',
                 exitCode: 1,

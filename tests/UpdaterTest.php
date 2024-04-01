@@ -149,7 +149,7 @@ class UpdaterTest extends TestCase
             'git rev-parse --abbrev-ref HEAD' => 'HEAD',
             'git describe --tags --abbrev=0' => '1.0.0',
             'git pull' => '',
-            'git checkout 1.0.1' => 'TEST',
+            'git checkout 1.0.1 -f' => 'TEST',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
             'git fetch' => '',
         ]);
@@ -162,7 +162,7 @@ class UpdaterTest extends TestCase
             'git rev-parse --abbrev-ref HEAD' => 'HEAD',
             'git describe --tags --abbrev=0' => '1.0.0',
             'git pull origin HEAD' => '',
-            'git checkout 1.0.1' => '...',
+            'git checkout 1.0.1 -f' => '...',
             'git remote set-url origin https://salahhusa9:salahhusa9@github.com/salahhusa9/laravel-test.git' => '',
             'git fetch' => '',
         ]);
