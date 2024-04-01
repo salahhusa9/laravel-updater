@@ -2,6 +2,21 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v1.2.0 - 2024-04-01
+
+### What's Changed
+
+* Git checkout throw away local modifications by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/43
+  
+* Update dependency orchestra/testbench to v9 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/39
+  
+* Update dependabot/fetch-metadata action to v1.7.0 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/40
+  
+* Update dependabot/fetch-metadata action to v2 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/41
+  
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.1.0...v1.2.0
+
 ## v1.1.0 - 2024-03-12
 
 ### What's Changed
