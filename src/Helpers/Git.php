@@ -144,20 +144,6 @@ class Git
     {
         $gitPath = config('updater.git_path');
 
-        if (! $gitPath) {
-            $gitPath = Cache::rememberForever('git_path', function () {
-                $executableFinder = new \Symfony\Component\Process\ExecutableFinder();
-
-                $gitPath = $executableFinder->find('git');
-
-                if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-                    $gitPath = '"'.$gitPath.'"';
-                }
-
-                return $gitPath;
-            });
-        }
-
         return $gitPath;
     }
 }
