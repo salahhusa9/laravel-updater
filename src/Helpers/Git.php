@@ -2,7 +2,6 @@
 
 namespace Salahhusa9\Updater\Helpers;
 
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Process;
 use Salahhusa9\Updater\Exceptions\GitFailedException;
 
