@@ -2,6 +2,17 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v1.2.1 - 2024-06-08
+
+### What's Changed
+
+* Update laravel in github action by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/44
+* Bump aglipanci/laravel-pint-action from 2.3.1 to 2.4 by @dependabot in https://github.com/salahhusa9/laravel-updater/pull/45
+* Update dependabot/fetch-metadata action to v2.1.0 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/46
+* Remove  symfony component process executable finder by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/50
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.2.0...v1.2.1
+
 ## v1.2.0 - 2024-04-01
 
 ### What's Changed
