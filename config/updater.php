@@ -3,7 +3,7 @@
 // config for Salahhusa9/Updater
 return [
 
-    'git_path' => null,
+    'git_path' => 'git',
 
     'repository_source' => \Salahhusa9\Updater\RepositorySource\GithubRepository::class,
     'github_token' => env('GITHUB_TOKEN'),
