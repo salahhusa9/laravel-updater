@@ -47,7 +47,7 @@ composer require salahhusa9/laravel-updater
 You can publish the config file with:
 
 ```shell
-php artisan vendor:publish --tag="laravel-updater-config"
+php artisan vendor:publish --tag="updater-config"
 ```
 
 ### Configuring
