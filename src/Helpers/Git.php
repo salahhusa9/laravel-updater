@@ -141,7 +141,7 @@ class Git
      */
     public static function gitPath()
     {
-        $gitPath = config('updater.git_path');
+        $gitPath = config('updater.git_path', 'git');
 
         return $gitPath;
     }
