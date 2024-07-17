@@ -28,8 +28,11 @@ class UpdaterCommand extends Command
 
         $this->components->twoColumnDetail('Application updated', Updater::getCurrentVersion());
 
-        $this->components->line('Thank you for using this package! ❤️');
-        $this->components->line('Consider supporting my work: https://github.com/sponsors/salahhusa9');
+        $this->components->info('
+            Thank you for using this package! ❤️
+            Consider supporting my work: 
+            https://github.com/sponsors/salahhusa9
+        ');
 
         return self::SUCCESS;
     }
