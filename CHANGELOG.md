@@ -2,6 +2,19 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v1.2.3 - 2024-07-17
+
+### What's Changed
+
+* Update dependabot/fetch-metadata action to v2.2.0 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/52
+* [Add sponsor message and link in Update Command](https://github.com/sponsors/salahhusa9)
+
+> Thank you for using this package! ❤️
+Consider supporting my work:
+https://github.com/sponsors/salahhusa9
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.2.2...v1.2.3
+
 ## v1.2.2 - 2024-06-25
 
 **Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.2.1...v1.2.2
