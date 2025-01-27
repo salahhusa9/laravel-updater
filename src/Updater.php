@@ -58,7 +58,7 @@ class Updater
                 ];
 
                 if (config('updater.before_update_pipelines', false) && is_array(config('updater.before_update_pipelines')) && count(config('updater.before_update_pipelines')) > 0) {
-                    $pipelines[] = config('updater.before_update_pipelines');
+                    $pipelines = array_merge($pipelines, config('updater.before_update_pipelines'));
                 }
 
                 if (config('updater.migrate', false)) {
@@ -90,7 +90,7 @@ class Updater
                 }
 
                 if (config('updater.after_update_pipelines', false) && is_array(config('updater.after_update_pipelines')) && count(config('updater.after_update_pipelines')) > 0) {
-                    $pipelines[] = config('updater.after_update_pipelines');
+                    $pipelines = array_merge($pipelines, config('updater.after_update_pipelines'));
                 }
 
                 // check if pipelines is array and not empty and items is implemented Pipeline contract
