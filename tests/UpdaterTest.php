@@ -9,7 +9,7 @@ use Salahhusa9\Updater\Tests\TestCase;
 
 class UpdaterTest extends TestCase
 {
-    public function testGetCurrentVersion()
+    public function test_get_current_version()
     {
         config()->set('updater.git_path', 'git');
 
@@ -21,7 +21,7 @@ class UpdaterTest extends TestCase
         $this->assertEquals('1.0.0', Updater::getCurrentVersion());
     }
 
-    public function testGetLatestVersion()
+    public function test_get_latest_version()
     {
         Http::fake([
             'https://api.github.com/repos/salahhusa9/laravel-test/releases/latest' => Http::response([
@@ -46,7 +46,7 @@ class UpdaterTest extends TestCase
         $this->assertEquals('1.0.1', Updater::getLatestVersion());
     }
 
-    public function testGetLatestVersionData()
+    public function test_get_latest_version_data()
     {
         Http::fake([
             'https://api.github.com/repos/salahhusa9/laravel-test/releases/latest' => Http::response([
@@ -71,7 +71,7 @@ class UpdaterTest extends TestCase
         $this->assertEquals(['tag_name' => '1.0.1'], Updater::getLatestVersionData());
     }
 
-    public function testVersions()
+    public function test_versions()
     {
         Http::fake([
             'https://api.github.com/repos/salahhusa9/laravel-test/releases' => Http::response([
@@ -104,7 +104,7 @@ class UpdaterTest extends TestCase
         $this->assertEquals(['1.0.0', '1.1.0', '2.0.0'], Updater::versions());
     }
 
-    public function testNewVersionAvailable()
+    public function test_new_version_available()
     {
         Http::fake([
             'https://api.github.com/repos/salahhusa9/laravel-test/releases/latest' => Http::response([
@@ -129,7 +129,7 @@ class UpdaterTest extends TestCase
         $this->assertEquals(['current_version' => '1.0.0', 'latest_version' => '1.0.1'], Updater::newVersionAvailable());
     }
 
-    public function testUpdate()
+    public function test_update()
     {
         Event::fake();
         // Artisan::fake();

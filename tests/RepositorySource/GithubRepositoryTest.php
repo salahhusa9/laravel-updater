@@ -16,7 +16,7 @@ class GithubRepositoryTest extends \Salahhusa9\Updater\Tests\TestCase
         config()->set('updater.github_username', 'salahhusa9');
         config()->set('updater.github_repository', 'laravel-updater');
 
-        $githubRepository = new GithubRepository();
+        $githubRepository = new GithubRepository;
 
         $this->assertTrue($githubRepository->checkConfig());
     }
@@ -26,7 +26,7 @@ class GithubRepositoryTest extends \Salahhusa9\Updater\Tests\TestCase
     {
         $this->expectException(GithubConfigException::class);
 
-        $githubRepository = new GithubRepository();
+        $githubRepository = new GithubRepository;
 
         $this->assertTrue($githubRepository->checkConfig());
     }
@@ -45,7 +45,7 @@ class GithubRepositoryTest extends \Salahhusa9\Updater\Tests\TestCase
             ], 200),
         ]);
 
-        $githubRepository = new GithubRepository();
+        $githubRepository = new GithubRepository;
 
         $this->assertEquals('v1.0.0', $githubRepository->getLatestVersion());
     }
@@ -64,7 +64,7 @@ class GithubRepositoryTest extends \Salahhusa9\Updater\Tests\TestCase
             ], 200),
         ]);
 
-        $githubRepository = new GithubRepository();
+        $githubRepository = new GithubRepository;
 
         $this->assertIsArray($githubRepository->getLatestVersionData()->toArray());
     }
@@ -88,7 +88,7 @@ class GithubRepositoryTest extends \Salahhusa9\Updater\Tests\TestCase
             ], 200),
         ]);
 
-        $githubRepository = new GithubRepository();
+        $githubRepository = new GithubRepository;
 
         $this->assertIsArray($githubRepository->getVersions());
     }
@@ -112,7 +112,7 @@ class GithubRepositoryTest extends \Salahhusa9\Updater\Tests\TestCase
             ], 200),
         ]);
 
-        $githubRepository = new GithubRepository();
+        $githubRepository = new GithubRepository;
 
         $this->assertIsArray($githubRepository->getVersionsData()->toArray());
     }
