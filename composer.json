@@ -33,9 +33,9 @@
         "nunomaduro/collision": "^7.8|^8.0",
         "nunomaduro/larastan": "^2.0.1",
         "orchestra/testbench": "^8.0|^9.0",
-        "pestphp/pest": "^2.20",
-        "pestphp/pest-plugin-arch": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0"
+        "pestphp/pest": "^2.20|^3.0",
+        "pestphp/pest-plugin-arch": "^2.0|^3.0",
+        "pestphp/pest-plugin-laravel": "^2.0|^3.0"
     },
     "autoload": {
         "psr-4": {
