@@ -2,6 +2,21 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v1.3.0 - 2025-04-01
+
+### What's Changed
+
+* Bump aglipanci/laravel-pint-action from 2.4 to 2.5 by @dependabot in https://github.com/salahhusa9/laravel-updater/pull/62
+* Update dependency illuminate/contracts to **v12** by @renovate in https://github.com/salahhusa9/laravel-updater/pull/63
+* Update dependency node to v22 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/65
+* chore(deps): update dependency orchestra/testbench to v10 by @renovate in https://github.com/salahhusa9/laravel-updater/pull/64
+
+> Thank you for using this package! ❤️
+Consider supporting my work:
+https://github.com/sponsors/salahhusa9
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.2.4...v1.3.0
+
 ## v1.2.4 - 2025-01-27
 
 ### What's Changed
