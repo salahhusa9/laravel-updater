@@ -12,6 +12,13 @@ return [
 
     'github_timeout' => 100,
 
+    'bitbucket_username' => env('BITBUCKET_USERNAME'),
+    'bitbucket_password' => env('BITBUCKET_PASSWORD'),
+    'bitbucket_workspace' => env('BITBUCKET_WORKSPACE'),
+    'bitbucket_repo_slug' => env('BITBUCKET_REPOSITORY'),
+
+    'bitbucket_timeout' => 100,
+
     'maintenance_mode' => true,
     'maintenance_mode_secret' => env('MAINTENANCE_MODE_SECRET', false),
 
