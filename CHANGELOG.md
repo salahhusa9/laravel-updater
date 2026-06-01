@@ -2,6 +2,25 @@
 
 All notable changes to `laravel-updater` will be documented in this file.
 
+## v2.0.0 - 2026-06-01
+
+### What's Changed:
+
+#### Add support for Laravel 13 with continued support for Laravel 11 and 12
+
+* Bump dependabot/fetch-metadata from 2.3.0 to 2.4.0 by @dependabot[bot] in https://github.com/salahhusa9/laravel-updater/pull/68
+* Bump aglipanci/laravel-pint-action from 2.5 to 2.6 by @dependabot[bot] in https://github.com/salahhusa9/laravel-updater/pull/72
+* Bump actions/upload-pages-artifact from 3 to 4 by @dependabot[bot] in https://github.com/salahhusa9/laravel-updater/pull/79
+* Bump actions/setup-node from 4 to 6 by @dependabot[bot] in https://github.com/salahhusa9/laravel-updater/pull/85
+* Bump stefanzweifel/git-auto-commit-action from 5 to 7 by @dependabot[bot] in https://github.com/salahhusa9/laravel-updater/pull/83
+* Bump dependabot/fetch-metadata from 2.4.0 to 2.5.0 by @dependabot[bot] in https://github.com/salahhusa9/laravel-updater/pull/95
+* Update Laravel and PHP version requirements in composer.json and run-tests.yml by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/103
+* Update README badge and remove renovate configuration by @salahhusa9 in https://github.com/salahhusa9/laravel-updater/pull/105
+* Update actions/deploy-pages action to v5 by @renovate[bot] in https://github.com/salahhusa9/laravel-updater/pull/106
+* Update actions/upload-pages-artifact action to v5 by @renovate[bot] in https://github.com/salahhusa9/laravel-updater/pull/107
+
+**Full Changelog**: https://github.com/salahhusa9/laravel-updater/compare/v1.3.0...v2.0.0
+
 ## v1.3.0 - 2025-04-01
 
 ### What's Changed
